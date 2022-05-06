@@ -1,1 +1,1 @@
-# COMP1030ProgramminFundamentals
+# COMP1030ProgrammingFundamentals
