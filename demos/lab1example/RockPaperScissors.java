@@ -1,7 +1,7 @@
 class RockPaperScissors {
     // every program has a main method that accepts a list of string arguments
     public static void main(String[] args) {
-        // code goes here
+        // Your code goes here
         // INPUT
         // scanner object and get input from user
         // Math.random() to generate computer input
