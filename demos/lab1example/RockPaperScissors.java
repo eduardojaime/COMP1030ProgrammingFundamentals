@@ -1,19 +1,19 @@
+import java.util.Scanner;
+
 class RockPaperScissors {
     // every program has a main method that accepts a list of string arguments
     public static void main(String[] args) {
-        // Your code goes here
-        // INPUT
-        // scanner object and get input from user
-        // Math.random() to generate computer input
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        // Complete this line
+        int b = scan.nextInt(); // get the second value
+        // Complete this line
+        int c = scan.nextInt(); // get the third value
 
-        // PROCESS
-        // series of if-else statements to determine the results of the game
-        // print out user and computer selection
-        System.out.println("User selected Rock");
-        System.out.println("Computer selected Paper");
-
-
-        // OUTPUT
-        System.out.println("Computer wins!");
+        System.out.println(a);
+        // Complete this line
+        System.out.println(b);
+        // Complete this line
+        System.out.println(c);
     }
 }
