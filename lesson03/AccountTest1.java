@@ -1,46 +1,30 @@
-// Fig. 3.9: AccountTest.java
-// Inputting and outputting floating-point numbers with Account objects.
+// Fig. 3.2: AccountTest.java
+// Creating and manipulating an Account object.
 import java.util.Scanner;
 
 public class AccountTest1 {
-   public static void main(String[] args) {
-      Account1 account1 = new Account1("Jane Green", 50.00);
-      Account1 account2 = new Account1("John Blue", -7.53); 
-
-      // display initial balance of each object
-      System.out.printf("%s balance: $%.2f%n",
-         account1.getName(), account1.getBalance()); 
-      System.out.printf("%s balance: $%.2f%n%n",
-         account2.getName(), account2.getBalance()); 
-
-      // create a Scanner to obtain input from the command window
+   public static void main(String[] args) { 
+      // create a Scanner object to obtain input from the command window
       Scanner input = new Scanner(System.in);
 
-      System.out.print("Enter deposit amount for account1: "); // prompt
-      double depositAmount = input.nextDouble(); // obtain user input
-      System.out.printf("%nadding %.2f to account1 balance%n%n", 
-         depositAmount);
-      account1.deposit(depositAmount); // add to account1's balance
+      // create an Account object and assign it to myAccount
+      Account1 myAccount = new Account1(); 
 
-      // display balances
-      System.out.printf("%s balance: $%.2f%n",
-         account1.getName(), account1.getBalance()); 
-      System.out.printf("%s balance: $%.2f%n%n",
-         account2.getName(), account2.getBalance()); 
+      // display initial value of name (null)
+      System.out.printf("Initial name is: %s%n%n", myAccount.getName());
 
-      System.out.print("Enter deposit amount for account2: "); // prompt
-      depositAmount = input.nextDouble(); // obtain user input
-      System.out.printf("%nadding %.2f to account2 balance%n%n", 
-         depositAmount);
-      account2.deposit(depositAmount); // add to account2 balance
+      // prompt for and read name
+      System.out.println("Please enter the name:");
+      String theName = input.nextLine(); // read a line of text
+      myAccount.setName(theName); // put theName in myAccount
+      System.out.println(); // outputs a blank line
 
-      // display balances
-      System.out.printf("%s balance: $%.2f%n", 
-         account1.getName(), account1.getBalance()); 
-      System.out.printf("%s balance: $%.2f%n%n",
-         account2.getName(), account2.getBalance()); 
+      // display the name stored in object myAccount
+      System.out.printf("Name in object myAccount is:%n%s%n",
+         myAccount.getName());
    } 
 } 
+
 
 /**************************************************************************
  * (C) Copyright 1992-2018 by Deitel & Associates, Inc. and               *

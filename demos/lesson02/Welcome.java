@@ -6,6 +6,7 @@ public class Welcome {
     // these two are different
     String welcomeMessage = "A";
     String WelcomeMessage = "B";
+    String Class = "hello"; // Java is CaseSensitive so class != Class
 
     /**
      * main is the method that is executed when Welcome runs
@@ -21,6 +22,6 @@ public class Welcome {
          */
         System.out.println("Java is a great language to learn!");
         System.out.println("\"Show me the money\" \n --Eduardo 1998");
-        System.out.printf("%s%n%s%n", "Hi again!", "This text is formatted");
+        System.out.printf("%s%n%s%n", "Hello There!","--Obi Wan Kenobi");
     }
 }
