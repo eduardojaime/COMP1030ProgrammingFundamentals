@@ -53,7 +53,7 @@
             - Print the position at which the value was found
         - If this position is -1 then no value was found
 
-### Demo 4 Finding the maximum value of three double parameters
+### Demo 4 Manipulating a collection of Strings using ArrayLists
 - Create a new file called ArrayListCollection.java
 - In this file, create a class named ArrayListCollection
 - Add a main method
