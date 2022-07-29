@@ -1,0 +1,157 @@
+# Instructions
+
+### Demo 1 Creating a Time Class
+- Create a new file called Time1.java
+- In this file, create a class named Time1
+- Declare three private instance variables with datatype int for storing the time:
+    - Hour
+    - Minute
+    - Second
+- Add a set method called setTime which accepts three parameters: hour, minute, and second
+    - Use an if-else statement to validate that
+        - Hour is a number greater than 0 and lesser than or equal to 24
+        - Minute is a number greater than or equal to 0 and lesser than 60
+        - Second is a number greater than or equal to 0 and lesser than 60
+    - Set each instance variable value to the corresponding value from the method parameter list
+- Add a helper method named toUniversalString without parameters that returns a string
+    - Return string representing the current time as universal-time format H:MM:SS
+- Add a helper method called toString() without parameters that returns a string
+    - Return string representing the current time as standard-time format  H:MM:SS AM or PM
+- Create a new file called Time1Test.java
+- In this file, create a class named Time1Test
+- Add a main method
+    - Declare and initialize an instance of Time1
+    - Print the time after the object was created in the terminal
+    - Call setTime with parameters 13, 30, 6
+    - Print the time in the terminal again
+    - Add a try-catch block
+        - In the try block, call setTime with incorrect values: 99,99,99
+        - In the catch block, handle IllegalArgumentException, and print error message to the terminal
+    - Print the time in the terminal again
+
+### Demo 2 Controlling access to members (instance variables and methods, encapsulation)
+- Create a new file called MemberAccessTest.java
+- In this file, create a class named MemberAccessTest
+- Add a main method
+    - Declare and initialize an instance of Time1
+    - Try assigning the following values to the instance variables in Time1 directly
+        - Hour > 7
+        - Minute > 15
+        - Second > 30
+- Verify that the following error message appears in the Error List tab
+    - Error: hour has private access in Time1
+
+### Demo 3 Using overloaded constructors to instantiate a class with different values
+- Create a new file called Time2.java
+- In this file, create a class named Time2
+- Declare three private instance variables with datatype int for storing the time:
+    - Hour
+    - Minute
+    - Second
+- Add a constructor method without parameters (default)
+    - Set all instance variable values to 0
+- Add a constructor method that accepts 3 parameters: hour, minute and second
+    - Use an if-else statement to validate that
+        - Hour is a number greater than 0 and lesser than or equal to 24
+        - Minute is a number greater than or equal to 0 and lesser than 60
+        - Second is a number greater than or equal to 0 and lesser than 60
+    - Set each instance variable value to the corresponding value from the method parameter list
+- Add an additional constructor method that accepts 2 parameters: hour and minute
+    - Call the constructor method with three parameter passing the corresponding values for hour and minute, and passing 0 for second
+- Add an additional constructor method that accepts 1 parameters: hour
+    - Call the constructor method with three parameter passing the corresponding values for hour, and passing 0 for minute and second
+- Add an additional constructor method that accepts 1 parameters: hour
+    - Call the constructor method with three parameter passing the corresponding values for hour, and passing 0 for minute and second
+- Add a helper method named toUniversalString without parameters that returns a string
+    - Return string representing the current time as universal-time format H:MM:SS
+- Add a helper method called toString() without parameters that returns a string
+    - Return string representing the current time as standard-time format  H:MM:SS AM or PM
+- Create a new file called Time2Test.java
+- In this file, create a class named Time2Test
+- Add a main method
+    - Declare and initialize an instance of Time2 using the default constructor (no parameters)
+    - Print the string value of this instance
+    - Declare and initialize an instance of Time2 using the constructor with 1 parameter (hour value)
+    - Print the string value of this instance
+    - Declare and initialize an instance of Time2 using the constructor with 2 parameters (hour, minute)
+    - Print the string value of this instance
+    - Declare and initialize an instance of Time2 using the constructor with 3 parameters (hour, minute, second)
+    - Print the string value of this instance
+    - Declare and initialize an instance of Time2 using the constructor with 1 parameter (time object)
+    - Print the string value of this instance
+    - Add a try-catch block
+        - In the try block, declare and initialize an instance of Time2 using the constructor with 3 parameters  passing incorrect values: 99,99,99
+        - In the catch block, handle IllegalArgumentException, and print error message to the terminal
+
+### Demo 4 Using Composition
+- Create a new file called Date.java
+- In this file, create a class named Date
+- Declare three private instance variables with datatype int for storing the time:
+    - Month
+    - Day
+    - Year
+- Declare a private static final array of int to store a list of daysPerMonth
+    - Initialize with the corresponding values for each month
+- Add a constructor method that accepts three parameters: month, day, year
+    - Use an if-else statement to validate that
+        - Month is a number greater than 0 and lesser than or equal to 12
+        - Day is a number greater than 0 and lesser than or equal to the corresponding value in the list of Days per Month for this particular month
+        - Use a formula to check for leap year in order to allow users to add Feb 29 as a date
+    - Set each instance variable value to the corresponding value from the method parameter list
+- Add a helper method called toString() without parameters that returns a string
+    - Return string representing the current date as month/day/year
+- Create a new file called Employee.java
+- In this file, create a class named Employee
+- Declare four private instance variables with datatype int for storing the time:
+    - firstname
+    - lastname
+    - Birthdate
+    - Hiredate
+- Add a constructor method that accepts 4 parameters and assign them to the corresponding instance variable
+- Add a helper method called toString() without parameters that returns a string
+    - Return string containing the employee's information
+- Create a new file called EmployeeTest.java
+- In this file, create a class named EmployeeTest
+- Add a main method
+    - Declare and initialize an instance of Date to represent a birth date
+    - Declare and initialize an instance of Date to represent a hire date
+    - Declare and initialize an instance of Employee using the constructor with four parameters
+    - Print the employee information in the terminal
+
+### Demo 5 Declaring Enum types to store a list of constants
+- Create a new file called Book.java
+- In this file, create an enum named Book
+- Add instance fields (private and final) for Title and CopyrightYear
+- Add a constructor method without access specifier that takes two parameters: title and copyrightyear
+    - Assign them to the corresponding instance fields
+- Add a getter method called getTitle() that returns the title field
+- Add a getter method called getCopyrightYear() that returns the copyrightyear field
+- Declare 6 constants of enum type passing title and copyright year
+- Create a new file called BookTest.java
+- In this file, create a class named BookTest
+- Add a main method
+    - Use a foreach loop to print all book values
+    - Use a foreach loop to print only the first four books
+
+### Demo 6 Implementing Static variables to share data across instances of a class
+- Create a new file called Employee.java
+- In this file, create a class named Employee
+- Declare two private instance variables with datatype int for storing the time:
+    - First name
+    - Last name
+- Declare a private static int instance field to store the count of employees created, set to 0
+- Add a constructor that takes two parameters: firstname and lastname
+    - Assign them to the corresponding instance fields
+    - Increase count value by 1
+    - Print the current values for first name, last name and count in the terminal
+- Add a getter method called getFirstName() that returns the first name value
+- Add a getter method called getLastName() that returns the last name value
+- Add a static getter method called getCount() that returns the count value
+- Create a new file called EmployeeTest.java
+- In this file, create a class named EmployeeTest
+- Add a main method
+    - Print the current value of Employee.getCount() in the terminal
+    - Declare and initialize an instance of Employee using the constructor with 2 parameters
+    - Declare and initialize an instance of Employee using the constructor with 2 parameters
+    - Print the value of count for the first employee
+Print the value of count for the second employee
