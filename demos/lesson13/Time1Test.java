@@ -2,6 +2,9 @@ public class Time1Test {
     public static void main(String[] args) {
         // instantiate a time object
         Time1 myTime = new Time1();
+        // encapsulation > private instance variables cannot be accessed from outside
+        // myTime.hour = 2; // breaks
+
         // print time
         System.out.println("Time right after object is created");
         System.out.println("Universal: " + myTime.toUniversalFormat()); // 00:00:00
@@ -25,7 +28,7 @@ public class Time1Test {
             // e will contain info about the error
             System.out.println("Oops! there was an error in the program: " + e.getMessage());
         }
-        
+
         // print time again
         System.out.println("Time right after setting time to 40:90:75");
         System.out.println("Universal: " + myTime.toUniversalFormat()); // BREAK
