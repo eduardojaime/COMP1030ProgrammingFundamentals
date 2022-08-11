@@ -8,6 +8,12 @@ public class Car extends Vehicle { // extends == inherit from
     private String trunkSpace;
     private boolean hasSunroof;
 
+    public int GetKilometersDriven(){
+        return 100000; // whatever numeric value
+    }
+
+
+
     // public void Honk(){
     //     System.out.println("Tuut tuut!");
     // }
