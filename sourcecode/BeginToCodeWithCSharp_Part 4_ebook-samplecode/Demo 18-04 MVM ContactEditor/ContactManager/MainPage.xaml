@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="ContactManager.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContactManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:ContactManagerViewModel x:Name="contactManagerViewModel"/>
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="4" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <StackPanel Name="ContactFinder" Margin="4" >
+                <TextBlock Text="Select Contact" FontSize="20" Margin="4" ></TextBlock>
+                <ListBox ItemsSource="{Binding FoundList}" Name="ContactListBox" Margin="4" Height="273" SelectedItem="{Binding SelectedContact,Mode=TwoWay}" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="4" >
+                                <TextBlock Text="{Binding Name}"/>
+                                <TextBlock Text="{Binding Address}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <TextBox Name="searchTextBox" Margin="4" Text="{Binding SearchText, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Button Name="SearchButton" Content="Search" HorizontalAlignment="Center" Click="SearchButton_Click"></Button>
+            </StackPanel>
+            <StackPanel Name="ContactEdit" Margin="4">
+                <TextBlock Text="Edit Contact" FontSize="20" HorizontalAlignment="Center" Margin="4"></TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="4">
+                    <TextBlock Text="Name:" Margin="4" Width="70"></TextBlock>
+                    <TextBox Name="NameTextBox" Width="200" Margin="4" Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="4">
+                    <TextBlock Text="Address:" Margin="4" Width="70"></TextBlock>
+                    <TextBox Name="AddressTextBox" Width="200" Height="200" AcceptsReturn="True" Margin="4" Text="{Binding Address,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="4">
+                    <TextBlock Text="Phone:" Margin="4" Width="70"></TextBlock>
+                    <TextBox Name="PhoneTextBox" Width="200" Margin="4" Text="{Binding Phone,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+                </StackPanel>
+                <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="4">
+                    <Button Name="DeleteContactButton" Content="Delete Contact" Margin="4" Click="DeleteContactButton_Click"></Button>
+                    <Button Name="NewContactButton" Content="New Contact" Margin="4" Click="NewContactButton_Click"></Button>
+                </StackPanel>-->
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

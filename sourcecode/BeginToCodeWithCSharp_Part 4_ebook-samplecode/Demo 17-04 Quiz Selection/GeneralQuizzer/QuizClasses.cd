@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GeneralQuizzer.FakeWrongQuiz" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAEAAACAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuizObjects.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GeneralQuizzer.CalculationQuizObject">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAIAQAAAAAAAAAAACAAAAAABAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>QuizObjects.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GeneralQuizzer.AdditionQuizObject">
+    <Position X="0.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuizObjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeneralQuizzer.SubtractionQuizObject">
+    <Position X="5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuizObjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeneralQuizzer.MultiplicationQuizObject">
+    <Position X="7.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuizObjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeneralQuizzer.DivisionQuizObject">
+    <Position X="2.75" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuizObjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GeneralQuizzer.IQuizObject" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAACAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuizObjects.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

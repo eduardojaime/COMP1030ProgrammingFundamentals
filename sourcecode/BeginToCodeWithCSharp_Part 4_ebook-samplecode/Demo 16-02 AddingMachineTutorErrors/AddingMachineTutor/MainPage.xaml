@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="AddingMachineTutor.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AddingMachineTutor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" >
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBlock Text="Adding Machine Tutor" TextAlignment="Center" Margin="4" FontSize="16"></TextBlock>
+            <TextBox Name="firstNumberTextBox" Width="100" Margin="4" TextAlignment="Center"></TextBox>
+            <TextBlock Text="+" TextAlignment="Center" Margin="4"></TextBlock>
+            <TextBox Name="secondNumberTextBox" Width="100" Margin="4" TextAlignment="Center"></TextBox>
+            <Button Content="Equals" Name="equalsButton" HorizontalAlignment="Center"  Margin="4" Click="equalsButton_Click" ></Button>
+            <TextBlock Name="resultTextBlock" Text="" TextAlignment="Center" Margin="4"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>
