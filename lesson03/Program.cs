@@ -1,4 +1,4 @@
-﻿namespace _2_throwdie;
+﻿namespace throwdie;
 class Program
 {
     static void Main(string[] args)

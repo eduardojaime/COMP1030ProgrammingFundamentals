@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.SymbolStore;
-namespace _1_basicprogram;
+namespace basicprogram;
 
 using System;
 class Program
