@@ -26,3 +26,30 @@
             - Print result message displaying goodbye
     - OUTPUT Step
         - Print the generated result
+
+### Part 2 	
+
+- Create a new folder inside lesson01 called grades
+- Open with VS Code
+- Open the terminal and run the following command
+    - dotnet new console --use-program-main
+- Go to Program.cs > main method
+    - INPUT Step
+        - Declare a char variable named grade and assign value of 'B'
+    - PROCESS Step
+        - Use a switch statement to determine what to do with grade
+        - In case it's an A 
+            - Show 'Excellent job!'
+            - Add a break instruction
+        - In case it's a B or a C 
+            - Show 'Well done!'
+            - Add a break instruction
+        - In case it's a D 
+            - Show 'You passed…'
+            - Add a break instruction
+        - In case it's a F
+            - Show 'Better try again'
+            - Add a break instruction
+        - As a default case
+            - Show 'Invalid Grade'
+            - Add a break instruction
