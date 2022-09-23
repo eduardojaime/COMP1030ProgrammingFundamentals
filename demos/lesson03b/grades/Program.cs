@@ -4,18 +4,19 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Grades!");
-        // INPUT 
-        Console.WriteLine("Enter a letter: A, B, C, D, E or F");
-        char grade = Console.ReadKey().KeyChar; // readkey listens for a single character input
-        string result = ""; // variable to store the message
+        // INPUT
+        Console.WriteLine("Enter a letter: A, B, C, D, or F");
+        char grade = Console.ReadKey().KeyChar; // readkey listens to a single character input and returns its associated info
+        string result = ""; // assign default values to your variables
+        Console.WriteLine();
         // PROCESS
         // determine which message to show
         switch (grade)
         {
             case 'A':
                 result = "Excellent!";
-                break; // always break so that other cases don't execute, exits switch statement
-            case 'B':
+                break;
+            case 'B': // double case is an OR operation
             case 'C':
                 result = "Well done!";
                 break;
@@ -23,13 +24,13 @@ class Program
                 result = "You passed...";
                 break;
             case 'F':
-                result = "Try again";
+                result = "Please try again...";
                 break;
-            default: // if nothing matches
-                result = "Invalid input!";
+            default:
+                result = "Invalid input, enter only A, B, C, D, or F";
                 break;
         }
-        // Compare with nested if version
+        // Compare with nested if
         if (grade == 'A')
         {
             result = "Excellent!";

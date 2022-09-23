@@ -53,3 +53,4 @@
         - As a default case
             - Show 'Invalid Grade'
             - Add a break instruction
+    - Try implementing same logic with if-else
