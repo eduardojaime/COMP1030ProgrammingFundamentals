@@ -73,7 +73,7 @@
 ### Demo 3 Creating a program that allows users to order pizzas
 
 - Create a new folder called lesson01
-- Inside of this folder create another one called throwdice
+- Inside of this folder create another one called pizzapicker
 - Open this with VS Code
 - Open the terminal and run the following command
     - dotnet new console --use-program-main
