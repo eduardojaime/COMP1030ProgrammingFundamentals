@@ -14,6 +14,7 @@
             - This will be used in the while example
         - Declare an int variable named counter2 and assign the result of calling Next(1, 11) method in myRandom
             - This will be used in the do-while example
+        - Start a while loop
             - Add condition to check that counter1 is less than 10
             - Inside the while block:
                 - Print current value of counter1
