@@ -5,7 +5,7 @@ class Program
     {
         Console.WriteLine("Hello Loop Control!");
         // show only odd numbers
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i <= 100; i++)
         {
             int remainder = i % 2;
             if (remainder == 0)
