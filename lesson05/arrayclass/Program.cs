@@ -9,7 +9,7 @@ class Program
         Console.WriteLine("Hello, Array Class!");
 
         int[] arr1 = { 34, 72, 13, 44, 25, 30, 10 };
-        int[] arr2 = list;
+        int[] arr2 = arr1;
         Console.Write("Original Array: ");
         foreach (int i in arr1)
         {
