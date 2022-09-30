@@ -5,9 +5,9 @@ class Program
     {
         Console.WriteLine("Hello Loop Control!");
         // show only odd numbers
-        for (int i = 0; i <= 100; i++)
+        for (int i = 1; i <= 100; i++)
         {
-            int remainder = i % 2;
+            int remainder = i % 2; // modulus operator is the remainder of the division
             if (remainder == 0)
             {
                 // break; // stops the execution here and does not continue

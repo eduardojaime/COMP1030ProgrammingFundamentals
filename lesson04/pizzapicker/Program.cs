@@ -25,7 +25,7 @@ class Program
             2 - Hawaiian
             3 - Vegetarian
             4 - Cheese and Tomato
-            0 - To exit and complete your order
+            Press ANY other key to exit and complete your order
         ";
             Console.WriteLine(options);
             char selection = Console.ReadKey().KeyChar;
@@ -65,11 +65,6 @@ class Program
             message = message.Replace("CHEESECOUNT", cheeseCount.ToString());
 
             Console.WriteLine(message);
-            
-            if (addPizza)
-            {
-                Console.WriteLine("To add another pizza...");
-            }
         }
     }
 }
