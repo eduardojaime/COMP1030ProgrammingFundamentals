@@ -9,7 +9,8 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello, Array List!");
-
+        // arrays are fixed size so they work only when we know max number of elements we will have
+        // if we don't know how many elements we will have we can use Array List
         ArrayList studentList = new ArrayList();
 
         bool addAnother = true;
