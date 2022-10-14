@@ -116,8 +116,5 @@ class Program
             // string interpolation
             Console.WriteLine($"Key: {student.Key} Value: {student.Value}"); // Key: 345678 Value: Vilas
         }
-
-
-
     }
 }
