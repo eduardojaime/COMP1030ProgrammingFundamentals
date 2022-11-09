@@ -21,10 +21,8 @@ class Program
         while (anotherGame == true)
         {
             // setup/reset the game
-            playerTotal = 0;
-            computerTotal = 0;
-            currentCard = 0;
-            anotherCard = true;
+            // TODO
+            
             // inner game loop > another card? increase score
             while (anotherCard == true)
             {
@@ -45,7 +43,7 @@ class Program
                 else if (playerTotal > 21)
                 {
                     Console.WriteLine("Oops! That's more than 21!");
-                    anotherCard = false;                    
+                    anotherCard = false;
                 }
                 // normal gameplay > ask if they want another one
                 else
@@ -64,28 +62,10 @@ class Program
                 }
             }
             // computer play
-            computerTotal = myRandom.Next(15, 22);
-            Console.WriteLine($"Computer total is {computerTotal}");
-            Console.WriteLine();
-
+            // assign the result of calling GenerateComputerScore() to computerTotal
+            computerTotal = GenerateComputerScore(myRandom); 
             // OUTPUT determine winner
-            if (playerTotal == 21) {
-                Console.WriteLine("Player Won!");
-            }
-            else if (playerTotal > 21) {
-                Console.WriteLine("Player Lost!");
-            }
-            else if (playerTotal == computerTotal){                
-                Console.WriteLine("It's a tie!");
-            }
-            else if (playerTotal > computerTotal) {                
-                Console.WriteLine("Player Won!");
-            }
-            else {
-                Console.WriteLine("Player Lost!");
-            }
-            Console.WriteLine($"Final Scores >>> Player: {playerTotal} Computer: {computerTotal}");
-            Console.WriteLine();
+            ShowGameResult(playerTotal, computerTotal);
 
             // ask user whether they want to play again
             Console.WriteLine("Good game! Would you like to play again?");
@@ -100,5 +80,42 @@ class Program
             }
             Console.WriteLine();
         }
+    }
+
+    // Method that receives two total scores and determines the winner
+    // no return value
+    private static void ShowGameResult(int playerTotal, int computerTotal)
+    {
+        if (playerTotal == 21)
+        {
+            Console.WriteLine("Player Won!");
+        }
+        else if (playerTotal > 21)
+        {
+            Console.WriteLine("Player Lost!");
+        }
+        else if (playerTotal == computerTotal)
+        {
+            Console.WriteLine("It's a tie!");
+        }
+        else if (playerTotal > computerTotal)
+        {
+            Console.WriteLine("Player Won!");
+        }
+        else
+        {
+            Console.WriteLine("Player Lost!");
+        }
+        Console.WriteLine($"Final Scores >>> Player: {playerTotal} Computer: {computerTotal}");
+        Console.WriteLine();
+    }
+
+    // Method that generates and returns computer score
+    private static int GenerateComputerScore(Random myRandom)
+    {
+        int computerTotal = myRandom.Next(15, 22);
+        Console.WriteLine($"Computer total is {computerTotal}");
+        Console.WriteLine();
+        return computerTotal; // this is a local variable that stores the value I'm returning
     }
 }
