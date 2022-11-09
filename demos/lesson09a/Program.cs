@@ -20,8 +20,13 @@ class Program
         // Main game loop > play again?, encloses everything
         while (anotherGame == true)
         {
-            // setup the game
+            // setup/reset the game
+            playerTotal = 0;
+            computerTotal = 0;
+            currentCard =0;
+            anotherCard = true;
             // inner game loop > another card? increase score
+            
             // computer play
 
             // OUTPUT determine winner
