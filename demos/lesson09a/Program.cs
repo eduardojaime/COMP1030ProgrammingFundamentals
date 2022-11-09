@@ -11,74 +11,25 @@ class Program
         int playerTotal = 0; // score
         int computerTotal = 0;  // score
         // variables that affect inner play
-        string choiceCard = ""; // Y or N
         bool anotherCard = true; // set to true by default
         // variables that affect main game
-        string choiceGame = ""; // Y or N
         bool anotherGame = true;
 
         // Main game loop > play again?, encloses everything
         while (anotherGame == true)
         {
             // setup/reset the game
-            // TODO
-            
-            // inner game loop > another card? increase score
-            while (anotherCard == true)
-            {
-                // deal another card
-                currentCard = myRandom.Next(1, 12);
-                // increase score
-                playerTotal = playerTotal + currentCard;
-                Console.WriteLine($"Your total is {playerTotal}");
-                Console.WriteLine();
-
-                // instant win
-                if (playerTotal == 21)
-                {
-                    Console.WriteLine("Awesome! Instant win!");
-                    anotherCard = false;
-                }
-                // instant lose
-                else if (playerTotal > 21)
-                {
-                    Console.WriteLine("Oops! That's more than 21!");
-                    anotherCard = false;
-                }
-                // normal gameplay > ask if they want another one
-                else
-                {
-                    Console.WriteLine("Would you like another card?");
-                    choiceCard = Console.ReadLine().Trim().ToUpper();
-                    if (choiceCard == "Y")
-                    {
-                        anotherCard = true;
-                    }
-                    else
-                    {
-                        anotherCard = false;
-                    }
-                    Console.WriteLine();
-                }
-            }
+            // use keyword ref when passing arguments so the method can modify their values
+            ResetGame(ref playerTotal, ref computerTotal, ref currentCard, ref anotherCard);
+            // Inner game loop
+            StartInnerPlayerLoop(myRandom, ref anotherCard, ref playerTotal);
             // computer play
             // assign the result of calling GenerateComputerScore() to computerTotal
-            computerTotal = GenerateComputerScore(myRandom); 
+            computerTotal = GenerateComputerScore(myRandom);
             // OUTPUT determine winner
             ShowGameResult(playerTotal, computerTotal);
-
             // ask user whether they want to play again
-            Console.WriteLine("Good game! Would you like to play again?");
-            choiceGame = Console.ReadLine().Trim().ToUpper();
-            if (choiceGame == "Y")
-            {
-                anotherGame = true;
-            }
-            else
-            {
-                anotherGame = false;
-            }
-            Console.WriteLine();
+            ProcessYesNoInput("Good game! Would you like to play again?", ref anotherGame);
         }
     }
 
@@ -117,5 +68,63 @@ class Program
         Console.WriteLine($"Computer total is {computerTotal}");
         Console.WriteLine();
         return computerTotal; // this is a local variable that stores the value I'm returning
+    }
+
+    // Method that resets values of variables to 0
+    // use ref so the method can modify each value
+    private static void ResetGame(ref int playerTotal, ref int computerTotal, ref int currentCard, ref bool anotherCard)
+    {
+        playerTotal = 0;
+        computerTotal = 0;
+        currentCard = 0;
+        anotherCard = true;
+    }
+
+    // show a message and process y/n input, update flag accordingly
+    private static void ProcessYesNoInput(string message, ref bool another)
+    {
+        Console.WriteLine(message);
+        string choice = Console.ReadLine().Trim().ToUpper();
+        if (choice == "Y")
+        {
+            another = true;
+        }
+        else
+        {
+            another = false;
+        }
+        Console.WriteLine();
+    }
+
+    private static void StartInnerPlayerLoop(Random myRandom, ref bool anotherCard, ref int playerTotal)
+    {
+        // inner game loop > another card? increase score
+        while (anotherCard == true)
+        {
+            // deal another card
+            int currentCard = myRandom.Next(1, 12); // can be local variable
+            // increase score
+            playerTotal = playerTotal + currentCard;
+            Console.WriteLine($"Your total is {playerTotal}");
+            Console.WriteLine();
+
+            // instant win
+            if (playerTotal == 21)
+            {
+                Console.WriteLine("Awesome! Instant win!");
+                anotherCard = false;
+            }
+            // instant lose
+            else if (playerTotal > 21)
+            {
+                Console.WriteLine("Oops! That's more than 21!");
+                anotherCard = false;
+            }
+            // normal gameplay > ask if they want another one
+            else
+            {
+                ProcessYesNoInput("Would you like another card?", ref anotherCard);
+            }
+        }
     }
 }
