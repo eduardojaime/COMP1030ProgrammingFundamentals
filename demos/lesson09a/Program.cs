@@ -64,8 +64,28 @@ class Program
                 }
             }
             // computer play
+            computerTotal = myRandom.Next(15, 22);
+            Console.WriteLine($"Computer total is {computerTotal}");
+            Console.WriteLine();
 
             // OUTPUT determine winner
+            if (playerTotal == 21) {
+                Console.WriteLine("Player Won!");
+            }
+            else if (playerTotal > 21) {
+                Console.WriteLine("Player Lost!");
+            }
+            else if (playerTotal == computerTotal){                
+                Console.WriteLine("It's a tie!");
+            }
+            else if (playerTotal > computerTotal) {                
+                Console.WriteLine("Player Won!");
+            }
+            else {
+                Console.WriteLine("Player Lost!");
+            }
+            Console.WriteLine($"Final Scores >>> Player: {playerTotal} Computer: {computerTotal}");
+            Console.WriteLine();
 
             // ask user whether they want to play again
             Console.WriteLine("Good game! Would you like to play again?");
