@@ -28,7 +28,7 @@ class Program
             InnerPlayerLoop(myRandom, ref anotherCard, ref playerTotal);
 
             // computer plays
-            computerTotal = ComputerPlays(myRandom);
+            computerTotal = GenerateComputerScore(myRandom);
 
             // show output > determine winner
             ShowGameResult(playerTotal, computerTotal);
