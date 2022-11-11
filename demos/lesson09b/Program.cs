@@ -17,10 +17,22 @@ class Program
         bool anotherGame = true;
 
         // Main Game Loop
-        // reset game
-        // inner game loop > another card y/n
-        // generate computer score
-        // determine winner
-        // ask for another game > y/n
+        while (anotherGame == true)
+        {
+            // reset game
+            // inner game loop > another card y/n
+            // generate computer score
+            // determine winner
+            // ask for another game > y/n
+            Console.WriteLine("Good game! Do you want to play again?");
+            choiceGame = Console.ReadLine().Trim().ToUpper(); // validate and clean inputs
+            if (choiceGame == "Y") {
+                anotherGame = true;
+            }
+            else {
+                anotherGame = false;
+            }
+            Console.WriteLine(); // prints empty line for formatting
+        }
     }
 }
