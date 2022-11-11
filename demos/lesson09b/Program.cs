@@ -28,20 +28,34 @@ class Program
             while (anotherCard == true)
             {
                 // generate number from 1 to 11
+                currentCard = myRandom.Next(1, 11);
                 // add to the player score
-                // ask if they want another card > y/n
-                Console.WriteLine("Would you like another card? Y/N");
-                choiceCard = Console.ReadLine().Trim().ToUpper(); // validate and clean inputs
-                if (choiceCard == "Y")
+                playerTotal = playerTotal + currentCard;
+                if (playerTotal < 21)
                 {
-                    anotherCard = true;
+                    // ask if they want another card > y/n
+                    Console.WriteLine("Would you like another card? Y/N");
+                    choiceCard = Console.ReadLine().Trim().ToUpper(); // validate and clean inputs
+                    if (choiceCard == "Y")
+                    {
+                        anotherCard = true;
+                    }
+                    else
+                    {
+                        anotherCard = false;
+                    }
+                    Console.WriteLine(); // prints empty line for formatting
                 }
-                else
-                {
+                else if (playerTotal == 21) {
+                    Console.WriteLine("Awesome! You scored exactly 21!");
                     anotherCard = false;
+                    Console.WriteLine();
                 }
-                Console.WriteLine(); // prints empty line for formatting
-                Console.Clear();
+                else {
+                    Console.WriteLine("Oops! That's more than 21...");
+                    anotherCard=false;
+                    Console.WriteLine();
+                }
             }
             // generate computer score
             // determine winner
