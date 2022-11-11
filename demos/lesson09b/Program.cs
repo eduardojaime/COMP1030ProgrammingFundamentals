@@ -33,17 +33,7 @@ class Program
                 if (playerTotal < 21)
                 {
                     // ask if they want another card > y/n
-                    Console.WriteLine("Would you like another card? Y/N");
-                    choiceCard = Console.ReadLine().Trim().ToUpper(); // validate and clean inputs
-                    if (choiceCard == "Y")
-                    {
-                        anotherCard = true;
-                    }
-                    else
-                    {
-                        anotherCard = false;
-                    }
-                    Console.WriteLine(); // prints empty line for formatting
+                    ProcessYesNoInput("Would you like another card? Y/N", ref anotherCard);
                 }
                 else if (playerTotal == 21)
                 {
@@ -65,17 +55,8 @@ class Program
             ShowGameResult(playerTotal, computerTotal);
 
             // ask for another game > y/n
-            Console.WriteLine("Good game! Do you want to play again? Y/N");
-            choiceGame = Console.ReadLine().Trim().ToUpper(); // validate and clean inputs
-            if (choiceGame == "Y")
-            {
-                anotherGame = true;
-            }
-            else
-            {
-                anotherGame = false;
-            }
-            Console.WriteLine(); // prints empty line for formatting
+            ProcessYesNoInput("Would you like to play another game? Y/N", ref anotherGame);
+
             Console.Clear();
         }
     }
@@ -118,12 +99,29 @@ class Program
     }
 
     // pass variables as ref to modify their values
-    private static void ResetGame(ref int playerTotal, ref int computerTotal, 
+    private static void ResetGame(ref int playerTotal, ref int computerTotal,
                                     ref int currentCard, ref bool anotherCard)
     {
         playerTotal = 0;
         computerTotal = 0;
         currentCard = 0;
         anotherCard = true; // because we want to give a card to the user at the beginning of the game
+    }
+    // Another common action in my program is to process Y/N input
+    // method takes a message, prints it, retrieves input, and modifies a flag accordingly
+    private static void ProcessYesNoInput(string question, ref bool anotherOne)
+    {
+        Console.WriteLine(question);
+        // make this into local variable
+        string choice = Console.ReadLine().Trim().ToUpper(); // validate and clean inputs
+        if (choice == "Y")
+        {
+            anotherOne = true;
+        }
+        else
+        {
+            anotherOne = false;
+        }
+        Console.WriteLine(); // prints empty line for formatting
     }
 }
