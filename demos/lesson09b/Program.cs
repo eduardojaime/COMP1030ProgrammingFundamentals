@@ -20,7 +20,12 @@ class Program
         while (anotherGame == true)
         {
             // reset game
+            playerTotal = 0;
+            computerTotal = 0;
+            currentCard = 0;
+            anotherCard = true; // because we want to give a card to the user at the beginning of the game
             // inner game loop > another card y/n
+            
             // generate computer score
             // determine winner
             // ask for another game > y/n
@@ -33,6 +38,7 @@ class Program
                 anotherGame = false;
             }
             Console.WriteLine(); // prints empty line for formatting
+            Console.Clear();
         }
     }
 }
