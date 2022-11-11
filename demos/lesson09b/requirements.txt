@@ -1,0 +1,19 @@
+Inputs
+AnotherCard? Y/N > INNER GAME LOOP
+AnotherGame? Y/N > MAIN GAME LOOP
+
+Process
+Reset scores, set all to 0
+> Generate a number from 1 to 11 using Random number generator object
+> Add this number to Player Score
+> Ask user whether they want another card?
+If Y then repeat generate number
+Else continue
+Generate a random number from 15 to 21
+Add number to computer score
+Determine the winner
+Ask if user wants to play again?
+If Y then repeat game
+
+Outputs
+Show message with the result (win, lose, tie) and scores
