@@ -20,10 +20,8 @@ class Program
         while (anotherGame == true)
         {
             // reset game
-            playerTotal = 0;
-            computerTotal = 0;
-            currentCard = 0;
-            anotherCard = true; // because we want to give a card to the user at the beginning of the game
+            ResetGame(ref playerTotal, ref computerTotal, ref currentCard, ref anotherCard);
+
             // inner game loop > another card y/n
             while (anotherCard == true)
             {
@@ -117,5 +115,15 @@ class Program
         Console.WriteLine($"Computer total is {computerTotal}");
         Console.WriteLine();
         return computerTotal;
+    }
+
+    // pass variables as ref to modify their values
+    private static void ResetGame(ref int playerTotal, ref int computerTotal, 
+                                    ref int currentCard, ref bool anotherCard)
+    {
+        playerTotal = 0;
+        computerTotal = 0;
+        currentCard = 0;
+        anotherCard = true; // because we want to give a card to the user at the beginning of the game
     }
 }
