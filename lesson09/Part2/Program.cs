@@ -69,7 +69,7 @@ class Program
     
     // pass random number generator object to simulate computer playing and return the total score
     // example of returning a value
-    private static int ComputerPlays(Random myRandom)
+    private static int GenerateComputerScore(Random myRandom)
     {
         int computerTotal = myRandom.Next(15, 22);
         Console.WriteLine($"Computer total is {computerTotal}");

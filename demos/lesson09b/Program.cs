@@ -61,9 +61,8 @@ class Program
                 }
             }
             // generate computer score
-            computerTotal = myRandom.Next(15, 22);
-            Console.WriteLine($"Computer total is {computerTotal}");
-            Console.WriteLine();
+            computerTotal = GenerateComputerScore(myRandom);
+
             // determine winner and show scores
             ShowGameResult(playerTotal, computerTotal);
 
@@ -108,5 +107,15 @@ class Program
         }
         Console.WriteLine($"Final Scores >>> Player: {playerTotal} Computer: {computerTotal}");
         Console.WriteLine();
+    }
+    // pass random number generator object to simulate computer playing and returning score
+    // example of returning a value
+    private static int GenerateComputerScore(Random myRandom)
+    {
+        // make into local variable
+        int computerTotal = myRandom.Next(15, 22);
+        Console.WriteLine($"Computer total is {computerTotal}");
+        Console.WriteLine();
+        return computerTotal;
     }
 }
