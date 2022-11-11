@@ -10,10 +10,8 @@ class Program
         int playerTotal = 0;
         int computerTotal = 0;
         // variables that affect inner game loop
-        string choiceCard = "";
         bool anotherCard = true;
         // variables that affect main game loop
-        string choiceGame = "";
         bool anotherGame = true;
 
         // Main Game Loop
@@ -21,19 +19,14 @@ class Program
         {
             // reset game
             ResetGame(ref playerTotal, ref computerTotal, ref currentCard, ref anotherCard);
-
             // inner game loop > another card y/n
             InnerPlayerLoop(myRandom, ref anotherCard, ref playerTotal);
-
             // generate computer score
             computerTotal = GenerateComputerScore(myRandom);
-
             // determine winner and show scores
             ShowGameResult(playerTotal, computerTotal);
-
             // ask for another game > y/n
             ProcessYesNoInput("Would you like to play another game? Y/N", ref anotherGame);
-
             Console.Clear();
         }
     }
