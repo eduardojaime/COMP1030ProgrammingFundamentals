@@ -63,6 +63,23 @@ class Program
             Console.WriteLine($"Computer total is {computerTotal}");
             Console.WriteLine();
             // determine winner and show scores
+            if (playerTotal == 21) {
+                Console.WriteLine("Player Won!");
+            }
+            else if (playerTotal > 21) {
+                Console.WriteLine("Player Lost!");
+            }
+            else if (playerTotal == computerTotal) {
+                Console.WriteLine("It's a tie!");
+            }
+            else if (playerTotal > computerTotal) {
+                Console.WriteLine("Player Won!");
+            }
+            else {
+                Console.WriteLine("Player Lost!");
+            }
+            Console.WriteLine($"Final Scores >>> Player: {playerTotal} Computer: {computerTotal}");
+            Console.WriteLine();
             // ask for another game > y/n
             Console.WriteLine("Good game! Do you want to play again? Y/N");
             choiceGame = Console.ReadLine().Trim().ToUpper(); // validate and clean inputs
