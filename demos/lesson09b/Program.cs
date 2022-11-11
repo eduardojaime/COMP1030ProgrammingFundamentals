@@ -28,9 +28,10 @@ class Program
             while (anotherCard == true)
             {
                 // generate number from 1 to 11
-                currentCard = myRandom.Next(1, 11);
+                currentCard = myRandom.Next(1, 12);
                 // add to the player score
                 playerTotal = playerTotal + currentCard;
+                Console.WriteLine($"Your total is {playerTotal}");
                 if (playerTotal < 21)
                 {
                     // ask if they want another card > y/n
@@ -58,7 +59,10 @@ class Program
                 }
             }
             // generate computer score
-            // determine winner
+            computerTotal = myRandom.Next(15, 22);
+            Console.WriteLine($"Computer total is {computerTotal}");
+            Console.WriteLine();
+            // determine winner and show scores
             // ask for another game > y/n
             Console.WriteLine("Good game! Do you want to play again? Y/N");
             choiceGame = Console.ReadLine().Trim().ToUpper(); // validate and clean inputs
