@@ -23,31 +23,8 @@ class Program
             ResetGame(ref playerTotal, ref computerTotal, ref currentCard, ref anotherCard);
 
             // inner game loop > another card y/n
-            while (anotherCard == true)
-            {
-                // generate number from 1 to 11
-                currentCard = myRandom.Next(1, 12);
-                // add to the player score
-                playerTotal = playerTotal + currentCard;
-                Console.WriteLine($"Your total is {playerTotal}");
-                if (playerTotal < 21)
-                {
-                    // ask if they want another card > y/n
-                    ProcessYesNoInput("Would you like another card? Y/N", ref anotherCard);
-                }
-                else if (playerTotal == 21)
-                {
-                    Console.WriteLine("Awesome! You scored exactly 21!");
-                    anotherCard = false;
-                    Console.WriteLine();
-                }
-                else
-                {
-                    Console.WriteLine("Oops! That's more than 21...");
-                    anotherCard = false;
-                    Console.WriteLine();
-                }
-            }
+            InnerPlayerLoop(myRandom, ref anotherCard, ref playerTotal);
+
             // generate computer score
             computerTotal = GenerateComputerScore(myRandom);
 
@@ -123,5 +100,35 @@ class Program
             anotherOne = false;
         }
         Console.WriteLine(); // prints empty line for formatting
+    }
+
+    private static void InnerPlayerLoop(Random myRandom, ref bool anotherCard, ref int playerTotal)
+    {
+        while (anotherCard == true)
+        {
+            // generate number from 1 to 11
+            // make local variable
+            int currentCard = myRandom.Next(1, 12);
+            // add to the player score
+            playerTotal = playerTotal + currentCard;
+            Console.WriteLine($"Your total is {playerTotal}");
+            if (playerTotal < 21)
+            {
+                // ask if they want another card > y/n
+                ProcessYesNoInput("Would you like another card? Y/N", ref anotherCard);
+            }
+            else if (playerTotal == 21)
+            {
+                Console.WriteLine("Awesome! You scored exactly 21!");
+                anotherCard = false;
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("Oops! That's more than 21...");
+                anotherCard = false;
+                Console.WriteLine();
+            }
+        }
     }
 }
