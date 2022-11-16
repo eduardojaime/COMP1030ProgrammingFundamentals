@@ -64,7 +64,23 @@ public class Student
         }
     }
     // Constructor
-    
-    // Methods
+    public Student(int studentId, string firstName, string lastName, string program, DateTime birthDate)
+    {
+        this.StudentId = studentId;
+        this.FirstName = firstName;
+        this.LastName = lastName; // best practice is to use camelCase for parameter names
+        this.Program = program;
+        this.BirthDate = birthDate; // I want the validation
+    }
+
+    // Methods > return a letter based on the average score
+    public string GetLetterGrade()
+    {
+        if (this.Average >= 90) { return "A"; }
+        else if (this.Average >= 80) { return "B"; }
+        else if (this.Average >= 70) { return "C"; }
+        else if (this.Average >= 60) { return "D"; }
+        else { return "F"; }
+    }
 
 }
