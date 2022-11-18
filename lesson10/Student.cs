@@ -1,21 +1,25 @@
-/* design
+/* Design > UML Class Diagram
     Student
-    --------
-    studentId: int
-    firstName: string
-    lastName: string
-    birthDate: datetime // property > validation
-    program: string
-    average: decimal
-    grades: decimal[]
-    ---------
-    void registerToProgram(program)
-    void enrollToClass(classId)
-    void dropFromClass(classId)
+    ----------
+    StudentId: int
+    FirstName: string
+    LastName: string
+    BirthDate: datetime > property with validation
+    Program: string
+    Average: decimal > property with validation
+    Grades: decimal[]
+    ----------
+    GetLetterGrade(): string
+    EnrollToCourse(): void
+    RegisterToProgram(): void
 */
 public class Student
 {
-    // fields
+    // FIELDS
+    // PROPERTIES
+    // CONSTRUCTORS
+    // PUBLIC METHODS
+    // PRIVATE METHODS    
     public int StudentId; // get;set; is implicit
     public string FirstName { get; set; } // optionally you can add get;set; to explicitly indicate this is a field
     public string LastName;
