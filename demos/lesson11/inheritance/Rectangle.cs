@@ -9,6 +9,7 @@ public class Rectangle : Shape
     // CONSTRUCTORS
     // METHODS
     // optional override PrintShape()
+    // will not override here
     // must override abstract methods in base class
     public override double CalculateArea()
     {
