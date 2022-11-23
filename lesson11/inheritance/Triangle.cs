@@ -16,13 +16,13 @@ public class Triangle : Shape
     {
         // Herons Formula A = √[4a²b² - (a² + b² - c²)²]/4
         // https://www.omnicalculator.com/math/3-sides-triangle-area
-        Console.WriteLine("Calculating Rectangle Area");
+        Console.WriteLine("Calculating Triangle Area");
         return Math.Sqrt((4 * Math.Pow(SideA, 2.0) * Math.Pow(SideB, 2.0)) - Math.Pow((Math.Pow(SideA, 2.0) + Math.Pow(SideB, 2.0) - Math.Pow(SideC, 2.0)), 2.0)) / 4;
     }
     public override double CalculatePerimeter()
     {
         // Formula P = a+b+c
-        Console.WriteLine("Calculating Rectangle Perimeter");
+        Console.WriteLine("Calculating Triangle Perimeter");
         return SideA + SideB + SideC;
     }
 }

@@ -11,7 +11,7 @@ class Program
         // Concrete classes: Rectangle and Triangle
         Rectangle myRectangle = new Rectangle();
         myRectangle.Height = 100.0;
-        myRectangle.Width = 100.0;
+        myRectangle.Width = 150.0;
         
         myRectangle.PrintShape();
         double rectanglePerimeter = myRectangle.CalculatePerimeter();
