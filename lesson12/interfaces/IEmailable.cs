@@ -1,4 +1,4 @@
 public interface IEmailable
 {
-    public bool SendEmailAddress();
+    public bool SendEmail();
 }

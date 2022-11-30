@@ -11,7 +11,12 @@ class Program
         myPerson.PhoneNumber = "(647) 123 4455";
         myPerson.EmailAddress = "ceo@mycompany.com";
 
-        Console.WriteLine(myPerson.SendEmailAddress());
-        Console.WriteLine(myPerson.ShowContactInfo());
+        // from a method
+        SendExternalEmail(myPerson);
+    }
+    // method that accepts any type of object that implements IEmailable
+    static void SendExternalEmail(IEmailable contact)
+    {
+        Console.WriteLine(contact.SendEmail());
     }
 }

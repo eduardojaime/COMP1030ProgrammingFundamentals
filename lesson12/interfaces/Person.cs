@@ -5,7 +5,7 @@ public class Person : IContact, IEmailable
     public string PhoneNumber;
     public string EmailAddress;
 
-    public bool SendEmailAddress()
+    public bool SendEmail()
     {
         // Send email address via SMTP
         return true;
