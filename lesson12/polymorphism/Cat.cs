@@ -1,7 +1,8 @@
 public class Cat : Animal
 {
-    public override void MakeSound()
+    // empty
+    public override void Sleep()
     {
-        Console.WriteLine("Meow meow");
+        Console.WriteLine("Brrrrrr! Brrrrr!");
     }
 }
