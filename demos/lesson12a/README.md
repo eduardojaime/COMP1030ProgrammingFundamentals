@@ -1,0 +1,76 @@
+# Instructions
+
+### Demo 1 Polymorphism (Animals)
+
+- Create a new folder called lesson12
+- Inside lesson11, create a new folder called polymorphism
+- Open this folder with VS Code
+- Open the terminal and run the following command
+    - dotnet new console --use-program-main
+- Create a new file and name it Animal.cs and then:
+    - Define an abstract class with the same name
+    - Add a method named MakeSound
+        - No parameters
+        - Returns void
+        - Make virtual and provide default code
+- Create a new file and name it Cat.cs and then:
+    - Define a public class with the same name
+    - Make this class inherit from Animal
+    - Add a method named MakeSound
+        - No parameters
+        - Returns void
+        - Use keyword override
+        - Write code to print the Meow meow
+- Create a new file and name it Dog.cs and then:
+    - Define a public class with the same name
+    - Make this class inherit from Animal
+    - Add a method named MakeSound
+        - No parameters
+        - Returns void
+        - Use keyword override
+        - Write code to print the Bark bark
+- Go to Program.cs > main method
+    - Modify the default Console.WriteLine() message to read "Hello, Animals!"
+    - Declare and initialize a new instance of Cat
+    - Call MakeSound()
+    - Declare and initialize a new instance of Dog
+    - Call MakeSound()
+- Run the program and verify output
+
+### Demo 2 Interfaces (Contact Manager System)
+
+- Create a new folder called lesson12
+- Inside lesson11, create a new folder called interfaces
+- Open this folder with VS Code
+- Open the terminal and run the following command
+    - dotnet new console --use-program-main
+- Create a new file and name it IContact.cs and then:
+    - Define a public interface with the same name
+    - Define a method named ShowContactInfo() without providing any code
+- Create a new file and name it IEmailable.cs and then:
+    - Define a public interface with the same name
+    - Define a method named SendEmailAddress() without providing any code
+- Create a new file and name it Person.cs and then:
+    - Define a public class with the same name
+    - Make this class implement IContact and IEmailable
+    - Add the following fields
+        - FirstName as string
+        - LastName as string
+        - PhoneNumber as string
+        - EmailAddress as string
+    - Add a method named ShowContactInfo()
+        - Note that there's no need to use the override keyword when defining these methods
+        - Return a string containing the Full Name and the PhoneNumber
+    - Add a method named SendEmailAddress() without providing any code
+        - Note that there's no need to use the override keyword when defining these methods
+        - Add a comment to indicate that we would send email via SMTP
+        - Return true
+- Go to Program.cs > main method
+    - Modify the default Console.WriteLine() message to read "Hello, Contacts!"
+    - Declare and initialize an instance of Person
+    - Provide a FirstName
+    - Provide a LastName
+    - Provide a PhoneNumber
+    - Provide an EmailAddress
+    - Call SendEmailAddress() and use Console.WriteLine() to print the output
+    - Call ShowContactInfo() and use Console.WriteLine() to print the output
