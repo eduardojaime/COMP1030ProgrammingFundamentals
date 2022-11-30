@@ -17,5 +17,10 @@ class Program
         }
         myGame.DetermineResult();
 
+        // Q1 How to solve CS8602 error for dereference of null reference?
+        // Message is shown because there could be a possible null value returned
+        // Use '!' after ReadLine() to indicates that the method can return a NULL value
+        string myOption = Console.ReadLine()!.Trim().ToUpper();
+
     }
 }

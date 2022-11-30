@@ -13,6 +13,7 @@ public class Game
     {
         // TODO
         Console.WriteLine("Starting the game");
+        
     }
 
     public void PlayTurn()
