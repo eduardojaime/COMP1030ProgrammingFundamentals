@@ -15,6 +15,10 @@ class Program
         SendExternalEmail(myPerson);
     }
     // method that accepts any type of object that implements IEmailable
+    // powerful aspect of interfaces
+    // program against the interface
+    // the following method can send an email via any object
+    // method accepts any class that implements IEmailable
     static void SendExternalEmail(IEmailable contact)
     {
         Console.WriteLine(contact.SendEmail());
