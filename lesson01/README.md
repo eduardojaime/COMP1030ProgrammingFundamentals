@@ -11,7 +11,14 @@
     - Watch this video tutorial to create and clone your first repository https://youtu.be/sObZ61W66GU
 - Download VS Code
     - Navigate to https://code.visualstudio.com/
-- Download .NET 6 SDK
+- Install the following extensions
+    - C#
+    - C# Extensions
+    - Auto-using for C#
+    - C# Sort Using
+    - Code Spell Checker
+    - Todo Tree
+- Download .NET 7 SDK
     - Navigate to https://dotnet.microsoft.com/en-us/download
 
 ### Creating a sample Hello World application
