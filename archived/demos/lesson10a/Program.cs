@@ -3,6 +3,7 @@ class Program
 {
     static void Main(string[] args)
     {
+
         Console.WriteLine("Hello, Georgian College!");
 
         // 1) Add 1 student and print average
