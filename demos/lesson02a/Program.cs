@@ -55,10 +55,22 @@ class Program
         Console.WriteLine($"The value of myChar is {myChar}");
         Console.WriteLine($"The value of myBirthday is {myBirthday.ToShortDateString()}");
 
-
         // review mathematical operations
+        int a = 10;
+        int b = 3;
+        int result = 0; // best practice > always initialize values even if it's just 0
+        double resultWithDecimals = 0.0;
 
-        // print results
+        result = a + b;
+        Console.WriteLine($"Result of a+b is {result.ToString()}"); // 13
+        result = a - b;
+        Console.WriteLine($"Result of a-b is {result.ToString()}"); // 7
+        result = a * b;        
+        Console.WriteLine($"Result of a*b is {result.ToString()}"); // 30
+        result = a / b;
+        Console.WriteLine($"Result of a/b is {result.ToString()}"); // 3.3333333 >> int operations drop decimals > 3
+        resultWithDecimals = (double)a / (double)b;
+        Console.WriteLine($"Result of a/b with decimals is {resultWithDecimals.ToString()}"); // 16 digits
 
         // convert values
 
