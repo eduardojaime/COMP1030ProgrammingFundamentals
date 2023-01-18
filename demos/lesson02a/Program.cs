@@ -81,7 +81,17 @@ class Program
         myLong = myByte; // no need to cast, a byte (8 bits) fits in a long (64 bits) bucket
         Console.WriteLine(myLong.ToString());
 
-        
-
+        // String methods
+        // Count number of characters in a string
+        int charCount = myString.Length; // or Count()
+        Console.WriteLine($"myString has {charCount.ToString()} characters");
+        // Convert to UPPERCASE
+        Console.WriteLine(myString.ToUpper()); // or ToLower()
+        // Concatenate values
+        myString = String.Concat(myString, " ", "cat"); // concatenate using the String class and pass a list of strings
+        Console.WriteLine(myString);
+        // Contains
+        bool containsCat = myString.Contains("cat"); // case sensitive search of the word
+        Console.WriteLine(containsCat); // contains returns true or false accordingly
     }    
 }
