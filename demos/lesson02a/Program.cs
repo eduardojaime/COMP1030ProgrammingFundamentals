@@ -72,8 +72,16 @@ class Program
         resultWithDecimals = (double)a / (double)b;
         Console.WriteLine($"Result of a/b with decimals is {resultWithDecimals.ToString()}"); // 16 digits
 
-        // convert values
+        // Int to Byte (Explicit cast)
+        // myInt = 2000012345
+        myByte = (byte)myInt; // value will be truncated from a binary level
+        Console.WriteLine(myByte.ToString());
 
-        // utilize string methods
+        // Byte to Int (Implicit cast)
+        myLong = myByte; // no need to cast, a byte (8 bits) fits in a long (64 bits) bucket
+        Console.WriteLine(myLong.ToString());
+
+        
+
     }    
 }
