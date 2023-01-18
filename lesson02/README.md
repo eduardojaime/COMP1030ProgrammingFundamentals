@@ -2,7 +2,7 @@
 
 ### Part 1 Creating a new program
 
-- Create a new folder called lesson01
+- Create a new folder called lesson02
 - Inside of this folder create another one called basicprogram
 - Open this with VS Code
 - Open the terminal and run the following command
