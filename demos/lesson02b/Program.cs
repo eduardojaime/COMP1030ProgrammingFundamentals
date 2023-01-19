@@ -67,7 +67,25 @@ class Program
         Console.WriteLine($"The result of a - b is {result.ToString()}");
 
         // convert values
+        // Int to Byte (Explicit cast)
+        myByte = (byte)myInt; // value will be truncated at binary level
+        // 2 billion became 57 when converted to byte
+        Console.WriteLine(myByte.ToString());
+
+        // Byte to Int (Implicit cast)
+        myLong = myByte; // no need to cast, a bite (8 bits) fits in a long (64 bits) bucket
+        Console.WriteLine(myLong.ToString());
 
         // string methods for string manipulation
+        int charCount = myText.Count();
+        Console.WriteLine($"myString has {charCount.ToString()} characters");
+        // Convert to UPPERCASE
+        Console.WriteLine(myText.ToUpper());
+        // Concatenate values
+        myText = String.Concat(myText, " ", "cat"); // concatenate using the String class and pass a list of strings
+        Console.WriteLine(myText);
+        // Contains
+        bool containsCat = myText.Contains("cat"); // case sensitive search of the word
+        Console.WriteLine(containsCat); // contains returns true or false accordingly
     }
 }
