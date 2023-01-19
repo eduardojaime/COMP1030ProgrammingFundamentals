@@ -53,13 +53,16 @@ class Program
 
         // Perform mathematical operations and show results
         result = a + b;
-        Console.WriteLine($"The result of a + b is {result.ToString()}");
+        Console.WriteLine($"The result of a + b is {result.ToString()}"); // embeds value in result in string
+        
         result = a * b;
         Console.WriteLine($"The result of a * b is {result.ToString()}");
+        
         result = a / b; // remainder is lost in divisions with ints
         resultWithDecimals = (double)a / (double)b; // need to cast int to double to access the decimals
         Console.WriteLine($"The result of a / b is {result.ToString()}");
         Console.WriteLine($"The result (with decimals) of a / b is {resultWithDecimals.ToString()}");
+        
         result = a - b;
         Console.WriteLine($"The result of a - b is {result.ToString()}");
 
