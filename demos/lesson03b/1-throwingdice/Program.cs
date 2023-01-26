@@ -3,7 +3,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Console.WriteLine("Hello, Dice!");
         // IF STATEMENTS
         // INPUT > 2 DICE (1-6), Y/N
         // Best Practice: Variable declaration first
@@ -34,7 +34,7 @@ class Program
         else
         {
             // exit 
-            result = "Thank you, good bye!";   
+            result = "Thank you, good bye!";
         }
         // OUTPUT > SHOW MESSAGE WITH SCORE OR THANK YOU
         Console.WriteLine(result); // there will always be a message in result
