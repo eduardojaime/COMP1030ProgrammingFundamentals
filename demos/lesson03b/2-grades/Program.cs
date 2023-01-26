@@ -32,7 +32,7 @@ class Program
                 break; // best practice, consistency
         }
         // OUTPUT > show message in console
+        Console.WriteLine(); // empty parameters prints new empty line
         Console.WriteLine(result);
-
     }
 }
