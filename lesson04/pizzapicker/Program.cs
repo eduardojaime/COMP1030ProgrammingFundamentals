@@ -53,17 +53,12 @@ class Program
                 addPizza = false;
             }
 
-            string message = @"Your order includes:
-            Pepperoni   x PEPPERONICOUNT
-            Hawaiian    x HAWAIIANCOUNT
-            Vegetarian  x VEGETARIANCOUNT
-            Cheese      x CHEESECOUNT
-        ";
-            message = message.Replace("PEPPERONICOUNT", pepperoniCount.ToString());
-            message = message.Replace("HAWAIIANCOUNT", hawaiianCount.ToString());
-            message = message.Replace("VEGETARIANCOUNT", vegetarianCount.ToString());
-            message = message.Replace("CHEESECOUNT", cheeseCount.ToString());
-
+            string message = @$"Your order includes:
+            Pepperoni   x   {pepperoniCount.ToString()}
+            Hawaiian    x   {hawaiianCount.ToString()}
+            Vegetarian  x   {vegetarianCount.ToString()}
+            Cheese      x   {cheeseCount.ToString()}
+            ";
             Console.WriteLine(message);
         }
     }
