@@ -13,8 +13,7 @@ class Program
                 // break; // stops the execution here and does not continue
                 continue; // skips the rest of the code in the for block and carries on with the next iteration
             }
-
-            Console.WriteLine(i.ToString());
+            Console.Write($"{i.ToString()} ");
         }
     }
 }
