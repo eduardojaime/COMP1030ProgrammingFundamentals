@@ -34,6 +34,8 @@ class Program
 
         // foreach
         string[] daysOfWeek = { "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY" };
+        // string[] daysOfWeek = { "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY" };
+
         foreach (string day in daysOfWeek)
         {
             Console.Write($"{day} ");
