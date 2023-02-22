@@ -63,6 +63,8 @@ class Program
                 Console.WriteLine("Monster made a weird noise!");
             }
 
+            Console.WriteLine($"PlayerHP: {playerHP.ToString()} MonsterHP: {monsterHP.ToString()}");
+
             // OUTPUT
             if (playerHP <= 0)
             {
@@ -73,6 +75,8 @@ class Program
                 if (answer == "Y")
                 {
                     continuePlaying = true;
+                    monsterHP = 100;
+                    playerHP = 100;
                 }
                 else
                 {
@@ -88,6 +92,8 @@ class Program
                 if (answer == "Y")
                 {
                     continuePlaying = true;
+                    monsterHP = 100;
+                    playerHP = 100;
                 }
                 else
                 {
