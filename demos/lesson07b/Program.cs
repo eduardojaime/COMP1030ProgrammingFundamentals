@@ -36,8 +36,16 @@ class Program
             }
             else if (playerMove == "H")
             {
-                playerHP = playerHP + 20;
-                Console.WriteLine("You drank a potion!");
+                // add check for overhealing
+                if (playerHP < 50)
+                {
+                    playerHP = playerHP + 20;
+                    Console.WriteLine("You drank a potion!");
+                }
+                else
+                {
+                    Console.WriteLine("Oops! you're healing too fast!");
+                }
             }
             else
             {
@@ -60,13 +68,16 @@ class Program
             }
             Console.WriteLine($"PlayerHP: {playerHP.ToString()} - MonsterHP: {monsterHP.ToString()}");
             // OUTPUT
-            if (playerHP <= 0) {
+            if (playerHP <= 0)
+            {
                 Console.WriteLine("Oh no, you and your friends are defeated!");
             }
-            else if (monsterHP <= 0) {
+            else if (monsterHP <= 0)
+            {
                 Console.WriteLine("You are victorious!");
             }
-            else {
+            else
+            {
                 continue; // skips the rest of the code, it won't ask the user for another round yet
             }
             // REPEAT?
