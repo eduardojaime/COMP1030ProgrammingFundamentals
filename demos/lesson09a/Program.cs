@@ -49,6 +49,25 @@ class Program
                 Console.WriteLine();
             }
             //      generate computer score
+            computerScore = cardDealer.Next(18, 22); // more difficult computer > gets 18 to 21
+
+            // determine result and show output
+            if (playerScore == 21) {
+                Console.WriteLine("Player won!");
+            }
+            else if (playerScore > 21) {
+                Console.WriteLine("Player lost!");
+            }
+            else if (playerScore == computerScore) {
+                Console.WriteLine("It's a tie!");
+            }
+            else if (playerScore > computerScore) {
+                Console.WriteLine("Player won!");
+            }
+            else {
+                Console.WriteLine("Player lost!");
+            }
+            Console.WriteLine($"Final Scores >>> Player: {playerScore.ToString()} vs Computer: {computerScore.ToString()}");
 
             // ask if user wants to play again
             Console.WriteLine("Good game! Would you like to play again? Press Y to play again. Any other key to exit.");
