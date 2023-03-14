@@ -50,13 +50,15 @@ class Program
                     }
                     Console.WriteLine();
                 }
-                else if (playerTotal == 21) {
-                    Console.WriteLine("Awesome! That's exactly 21!");                    
+                else if (playerTotal == 21)
+                {
+                    Console.WriteLine("Awesome! That's exactly 21!");
                     anotherCard = false;
                     Console.WriteLine();
                 }
-                else {
-                    Console.WriteLine("Oops! That's more than 21...");                    
+                else
+                {
+                    Console.WriteLine("Oops! That's more than 21...");
                     anotherCard = false;
                     Console.WriteLine();
                 }
@@ -68,7 +70,8 @@ class Program
             Console.WriteLine();
 
             // show output > determine winner
-            if (playerTotal == 21) {
+            if (playerTotal == 21)
+            {
                 // instant win
                 Console.WriteLine("Player Won!");
             }
