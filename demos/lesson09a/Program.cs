@@ -38,17 +38,7 @@ class Program
                 Console.WriteLine();
 
                 // ask if they want another card or exit
-                Console.WriteLine("Do you want another card? Press Y to get another card. Any other key to exit.");
-                choiceCard = Console.ReadLine().Trim().ToUpper();
-                if (choiceCard == "Y")
-                {
-                    anotherCard = true;
-                }
-                else
-                {
-                    anotherCard = false;
-                }
-                Console.WriteLine();
+                ProcessYesNonInput("Do you want another card? Press Y to get another card.", ref anotherCard);
             }
             //      generate computer score
             computerScore = cardDealer.Next(15, 30); // more difficult computer > gets 18 to 21
@@ -61,16 +51,8 @@ class Program
             ShowGameResult(playerScore, computerScore);
 
             // ask if user wants to play again
-            Console.WriteLine("Good game! Would you like to play again? Press Y to play again. Any other key to exit.");
-            choiceGame = Console.ReadLine().Trim().ToUpper(); // always cleanup user input
-            if (choiceGame == "Y") // does this read better?
-            {
-                anotherGame = true;
-            }
-            else
-            {
-                anotherGame = false;
-            }
+            // use ref keyword when passing variable to indicate it will be modified by the method
+            ProcessYesNonInput("Good game! Would you like to play again? Press Y to play again.", ref anotherGame);
         }
 
     } // END OF MAIN()
@@ -104,6 +86,26 @@ class Program
             Console.WriteLine("Player lost!");
         }
         Console.WriteLine($"Final Scores >>> Player: {playerScore.ToString()} vs Computer: {computerScore.ToString()}");
+    }
+
+    // reusable code
+    // Asks a question, retrieves an answer, sets variable true/false depending on the answer
+    // We want to make sure the method can permanently modify the value of the boolean variable
+    // so use ref next to the bool datatype
+    private static void ProcessYesNonInput(string question, ref bool anotherOne)
+    {
+        // print question text from parameter
+        Console.WriteLine(question);
+        // declare a local variable, it will be created and destroyed every time the method is called
+        string choice = Console.ReadLine().Trim().ToUpper(); // always cleanup user input
+        if (choice == "Y")
+        {
+            anotherOne = true;
+        }
+        else
+        {
+            anotherOne = false;
+        }
     }
 
 }
