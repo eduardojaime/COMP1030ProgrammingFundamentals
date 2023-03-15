@@ -6,8 +6,16 @@ class Program
         Console.WriteLine("Hello, BlackJack!");
         // INPUTS
         // variables that affect the scores
+        Random cardDealer = new Random();
+        int currentCard = 0;
+        int playerScore = 0;
+        int computerScore = 0;
         // variables that affect the inner game loop
+        bool anotherCard = true;
+        string choiceCard = "";
         // variables that affect the main game loop
+        bool anotherGame = true;
+        string choiceGame = "";
 
         // PROCESS
         // main game loop (round)
@@ -25,7 +33,7 @@ class Program
         //  normal lose comp > player and everything else I didn't cover
 
         //  ask player if they want to play again
-        //  yes > repeat game
+        //  yes > repeat game loop
         //  no > show goodbye message and end
     }
 }
