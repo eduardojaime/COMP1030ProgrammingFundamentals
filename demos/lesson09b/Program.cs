@@ -21,9 +21,32 @@ class Program
         // main game loop (round)
         while (anotherGame == true)
         {
+            //  reset the game
+            playerScore = 0;
+            computerScore = 0;
+            currentCard = 0;
+            anotherCard = true; // so that I can enter the inner game loop the first time
+
             //  inner game loop (player)
-            //      give user a card and increase score << if score > 21 then no more cards
-            //      ask if user wants another card
+            while (anotherCard == true)
+            {
+                //      give user a card and increase score << if score > 21 then no more cards
+                currentCard = cardDealer.Next(1, 12); // it'll give me values 1 to 11 inclusive
+                playerScore = playerScore + currentCard;
+                Console.WriteLine($"Your total score is now {playerScore.ToString()}");
+                Console.WriteLine();
+                //      ask if user wants another card
+                Console.WriteLine("Press Y to get another, any other key to end your turn.");
+                choiceCard = Console.ReadLine().Trim().ToUpper();
+                if (choiceCard == "Y")
+                {
+                    anotherCard = true;
+                }
+                else
+                {
+                    anotherCard = false;
+                }
+            }
             //  generate computer score
 
             // OUTPUTS
