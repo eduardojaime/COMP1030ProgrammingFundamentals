@@ -19,21 +19,34 @@ class Program
 
         // PROCESS
         // main game loop (round)
-        //  inner game loop (player)
-        //      give user a card and increase score
-        //      ask if user wants another card
-        //  generate computer score
+        while (anotherGame == true)
+        {
+            //  inner game loop (player)
+            //      give user a card and increase score << if score > 21 then no more cards
+            //      ask if user wants another card
+            //  generate computer score
 
-        // OUTPUTS
-        //  determine winner and show a message
-        //  instant win = 21
-        //  instant lose > 21
-        //  tie comp = player
-        //  normal win player > comp
-        //  normal lose comp > player and everything else I didn't cover
+            // OUTPUTS
+            //  determine winner and show a message
+            //  instant win = 21
+            //  instant lose > 21
+            //  tie comp = player
+            //  normal win player > comp
+            //  normal lose comp > player and everything else I didn't cover
 
-        //  ask player if they want to play again
-        //  yes > repeat game loop
-        //  no > show goodbye message and end
+            //  ask player if they want to play again
+            Console.WriteLine("Good game! Press Y to play again, any other key to exit.");
+            choiceGame = Console.ReadLine().Trim().ToUpper(); // always clean up user input
+            //  yes > repeat game loop
+            if (choiceGame == "Y")
+            {
+                anotherGame = true;
+            }
+            //  no > show goodbye message and end
+            else
+            {
+                anotherGame = false;
+            }
+        }
     }
 }
