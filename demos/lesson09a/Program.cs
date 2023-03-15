@@ -1,6 +1,8 @@
 ﻿namespace lesson09a;
 class Program
 {
+    // originally around 85 lines of code
+    // best practice is to have at most 15-20 lines of code per method, so that you don't scroll down too much
     static void Main(string[] args)
     {
         Console.WriteLine("Hello, Blackjack!");
@@ -49,25 +51,14 @@ class Program
                 Console.WriteLine();
             }
             //      generate computer score
-            computerScore = cardDealer.Next(18, 22); // more difficult computer > gets 18 to 21
+            computerScore = cardDealer.Next(15, 30); // more difficult computer > gets 18 to 21
 
+            // Output
+            // show scores
             // determine result and show output
-            if (playerScore == 21) {
-                Console.WriteLine("Player won!");
-            }
-            else if (playerScore > 21) {
-                Console.WriteLine("Player lost!");
-            }
-            else if (playerScore == computerScore) {
-                Console.WriteLine("It's a tie!");
-            }
-            else if (playerScore > computerScore) {
-                Console.WriteLine("Player won!");
-            }
-            else {
-                Console.WriteLine("Player lost!");
-            }
-            Console.WriteLine($"Final Scores >>> Player: {playerScore.ToString()} vs Computer: {computerScore.ToString()}");
+            // still breaks because main() is a static method
+            // static methods can only call other static methods
+            ShowGameResult(playerScore, computerScore);
 
             // ask if user wants to play again
             Console.WriteLine("Good game! Would you like to play again? Press Y to play again. Any other key to exit.");
@@ -82,7 +73,37 @@ class Program
             }
         }
 
-        // Output
-        // show scores
+    } // END OF MAIN()
+
+    // method that shows game result based on two scores (player and computer)
+    // make methods private if you don't plan to use them outside of this class
+    // parameter names don't need to match variable names
+    // but best practice is to match the names so that we don't get confused
+    // make static so that it can be called from main() which is also a static method
+    // unless they are part of another class
+    private static void ShowGameResult(int playerScore, int computerScore)
+    {
+        if (playerScore == 21)
+        {
+            Console.WriteLine("Player won!");
+        }
+        else if (playerScore > 21)
+        {
+            Console.WriteLine("Player lost!");
+        }
+        else if (playerScore == computerScore)
+        {
+            Console.WriteLine("It's a tie!");
+        }
+        else if (playerScore > computerScore)
+        {
+            Console.WriteLine("Player won!");
+        }
+        else
+        {
+            Console.WriteLine("Player lost!");
+        }
+        Console.WriteLine($"Final Scores >>> Player: {playerScore.ToString()} vs Computer: {computerScore.ToString()}");
     }
+
 }
