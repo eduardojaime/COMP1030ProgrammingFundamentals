@@ -33,7 +33,7 @@ class Program
             RunInnerPlayerLoop(cardDealer, ref anotherCard, ref playerScore);
 
             //      generate computer score
-            computerScore = cardDealer.Next(15, 30); // more difficult computer > gets 18 to 21
+            computerScore = GenerateComputerScore(cardDealer); // more difficult computer > gets 18 to 21
 
             // Output
             // show scores
@@ -117,6 +117,17 @@ class Program
             // ask if they want another card or exit
             ProcessYesNonInput("Do you want another card? Press Y to get another card.", ref anotherCard);
         }
+    }
+
+    // method that returns a value
+    private static int GenerateComputerScore(Random cardDealer) {
+        int score = 0;
+
+        score = cardDealer.Next(15, 30);
+
+        Console.WriteLine($"Computer got {score.ToString()}");
+
+        return score; // if method has a return type, it needs to have a return statement somewhere
     }
 
 }
