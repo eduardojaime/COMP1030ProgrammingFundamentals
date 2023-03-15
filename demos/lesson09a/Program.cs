@@ -28,18 +28,10 @@ class Program
             computerScore = 0;
             currentCard = 0;
             anotherCard = true;
+            
             //      inner game loop > ask user if they want another card and increase score
-            while (anotherCard == true)
-            {
-                // get card and add to score
-                currentCard = cardDealer.Next(1, 12);
-                playerScore = playerScore + currentCard;
-                Console.WriteLine($"Your current score is {playerScore.ToString()}");
-                Console.WriteLine();
+            RunInnerPlayerLoop(cardDealer, ref anotherCard, ref playerScore);
 
-                // ask if they want another card or exit
-                ProcessYesNonInput("Do you want another card? Press Y to get another card.", ref anotherCard);
-            }
             //      generate computer score
             computerScore = cardDealer.Next(15, 30); // more difficult computer > gets 18 to 21
 
@@ -105,6 +97,25 @@ class Program
         else
         {
             anotherOne = false;
+        }
+    }
+
+    // method for handling the inner game loop and letting the player increase their score
+    // use ref with anotherCard and playerScore because the method will update their value
+    private static void RunInnerPlayerLoop(Random cardDealer, ref bool anotherCard, ref int playerScore)
+    {
+        while (anotherCard == true)
+        {
+            // get card and add to score
+            // avoid parameters you don't need
+            // current card can be a local variable
+            int currentCard = cardDealer.Next(1, 12);
+            playerScore = playerScore + currentCard;
+            Console.WriteLine($"Your current score is {playerScore.ToString()}");
+            Console.WriteLine();
+
+            // ask if they want another card or exit
+            ProcessYesNonInput("Do you want another card? Press Y to get another card.", ref anotherCard);
         }
     }
 
