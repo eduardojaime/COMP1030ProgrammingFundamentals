@@ -73,6 +73,9 @@ class Program
         {
             Console.WriteLine("Player won!");
         }
+        else if (computerScore > 21) {
+            Console.WriteLine("Player won!");
+        }
         else
         {
             Console.WriteLine("Player lost!");
