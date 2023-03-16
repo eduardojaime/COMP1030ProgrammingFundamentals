@@ -25,7 +25,7 @@ class Program
             ResetGame(ref playerTotal, ref computerTotal, ref currentCard, ref anotherCard);
 
             // inner game loop > dealing another card
-            InnerPlayerLoop(myRandom, ref anotherCard, ref playerTotal);
+            RunInnerPlayerLoop(myRandom, ref anotherCard, ref playerTotal);
 
             // computer plays
             computerTotal = GenerateComputerScore(myRandom);
@@ -108,7 +108,7 @@ class Program
 
     // this represents the player playing the game
     // they might be dealt with another card which adds to their score
-    private static void InnerPlayerLoop(Random myRandom, ref bool anotherCard, ref int playerTotal)
+    private static void RunInnerPlayerLoop(Random myRandom, ref bool anotherCard, ref int playerTotal)
     {
         while (anotherCard == true)
         {
