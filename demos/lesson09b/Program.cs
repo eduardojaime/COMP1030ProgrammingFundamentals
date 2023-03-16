@@ -1,6 +1,8 @@
 ﻿namespace lesson09b;
 class Program
 {
+    // static refers to a method that's available for the CPU even before the program loads in memory
+    // that's why main is the starting point of the app
     static void Main(string[] args)
     {
         Console.WriteLine("Hello, BlackJack!");
@@ -36,16 +38,7 @@ class Program
                 Console.WriteLine($"Your total score is now {playerScore.ToString()}");
                 Console.WriteLine();
                 //      ask if user wants another card
-                Console.WriteLine("Press Y to get another, any other key to end your turn.");
-                choiceCard = Console.ReadLine().Trim().ToUpper();
-                if (choiceCard == "Y")
-                {
-                    anotherCard = true;
-                }
-                else
-                {
-                    anotherCard = false;
-                }
+                ProcessYesNoInput("Press Y to get another card, any other key to end your turn.", ref anotherCard);                
             }
             //  generate computer score
             computerScore = cardDealer.Next(15, 22);
@@ -53,41 +46,63 @@ class Program
             Console.WriteLine();
 
             // OUTPUTS
-            //  determine winner and show a message
-            //  instant win = 21
-            if (playerScore == 21) {
-                Console.WriteLine("Player wins!");
-            }
-            //  instant lose > 21
-            else if (playerScore > 21) {
-                Console.WriteLine("Player loses!");
-            }
-            //  tie comp = player
-            else if (playerScore == computerScore) {
-                Console.WriteLine("It's a tie!");
-            }
-            //  normal win player > comp
-            else if (playerScore > computerScore) {
-                Console.WriteLine("Player wins!");
-            }
-            //  normal lose comp > player and everything else I didn't cover
-            else {
-                Console.WriteLine("Player loses!");
-            }
+            ShowGameResult(playerScore, computerScore);
 
             //  ask player if they want to play again
-            Console.WriteLine("Good game! Press Y to play again, any other key to exit.");
-            choiceGame = Console.ReadLine().Trim().ToUpper(); // always clean up user input
-            //  yes > repeat game loop
-            if (choiceGame == "Y")
-            {
-                anotherGame = true;
-            }
-            //  no > show goodbye message and end
-            else
-            {
-                anotherGame = false;
-            }
+            ProcessYesNoInput("Good game! Press Y to play again, any other key to exit.", ref anotherGame);
+        }
+    } // END OF MAIN METHOD
+
+    // method that takes two scores and prints a message indicating the result of the game
+    // public makes method visible outside of the class, private makes it visible only inside of the class
+    // since main method is static, and static methods can only call other static methods directly
+    // we need ShowGameResult to also be static
+    private static void ShowGameResult(int playerScore, int computerScore)
+    {
+        // bring over code from above
+        //  determine winner and show a message
+        //  instant win = 21
+        if (playerScore == 21)
+        {
+            Console.WriteLine("Player wins!");
+        }
+        //  instant lose > 21
+        else if (playerScore > 21)
+        {
+            Console.WriteLine("Player loses!");
+        }
+        //  tie comp = player
+        else if (playerScore == computerScore)
+        {
+            Console.WriteLine("It's a tie!");
+        }
+        //  normal win player > comp
+        else if (playerScore > computerScore)
+        {
+            Console.WriteLine("Player wins!");
+        }
+        //  normal lose comp > player and everything else I didn't cover
+        else
+        {
+            Console.WriteLine("Player loses!");
+        }
+    }
+
+    // a common action in my code is asking a question, retrieving an answer, and setting the value of a flag accordingly
+    // parameters receive only a copy of the value
+    // if the method needs to be able to permanently modify the value of a variable, we need to use the keyword ref
+    private static void ProcessYesNoInput(string question, ref bool anotherOne)
+    {
+        Console.WriteLine(question);
+        // local variable, no need to receive this from the parameter list since it only holds a temp value
+        string choice = Console.ReadLine().Trim().ToUpper();
+        if (choice == "Y")
+        {
+            anotherOne = true; // I want the method to modify the value of the variable passed as anotherOne (ref)
+        }
+        else
+        {
+            anotherOne = false;
         }
     }
 }
