@@ -30,16 +30,8 @@ class Program
             anotherCard = true; // so that I can enter the inner game loop the first time
 
             //  inner game loop (player)
-            while (anotherCard == true)
-            {
-                //      give user a card and increase score << if score > 21 then no more cards
-                currentCard = cardDealer.Next(1, 12); // it'll give me values 1 to 11 inclusive
-                playerScore = playerScore + currentCard;
-                Console.WriteLine($"Your total score is now {playerScore.ToString()}");
-                Console.WriteLine();
-                //      ask if user wants another card
-                ProcessYesNoInput("Press Y to get another card, any other key to end your turn.", ref anotherCard);                
-            }
+            RunInnerGameLoop(cardDealer, ref anotherCard, ref playerScore);
+
             //  generate computer score
             computerScore = cardDealer.Next(15, 22);
             Console.WriteLine($"Computer Score is {computerScore.ToString()}");
@@ -103,6 +95,25 @@ class Program
         else
         {
             anotherOne = false;
+        }
+    }
+
+    // method that represents the player playing the game, getting cards and increasing their score
+    // parameter names don't need to match variable names (not mandatory)
+    // however, it's a good practice to have them match
+    // use ref for both anotherCard and playerScore because the method needs to make permanent changes to their values
+    private static void RunInnerGameLoop(Random cardDealer, ref bool anotherCard, ref int playerScore)
+    {
+        while (anotherCard == true)
+        {
+            //      give user a card and increase score << if score > 21 then no more cards
+            // make this a local variable, it holds a temp value
+            int currentCard = cardDealer.Next(1, 12); // it'll give me values 1 to 11 inclusive
+            playerScore = playerScore + currentCard;
+            Console.WriteLine($"Your total score is now {playerScore.ToString()}");
+            Console.WriteLine();
+            //      ask if user wants another card
+            ProcessYesNoInput("Press Y to get another card, any other key to end your turn.", ref anotherCard);
         }
     }
 }
