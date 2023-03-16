@@ -33,9 +33,7 @@ class Program
             RunInnerGameLoop(cardDealer, ref anotherCard, ref playerScore);
 
             //  generate computer score
-            computerScore = cardDealer.Next(15, 22);
-            Console.WriteLine($"Computer Score is {computerScore.ToString()}");
-            Console.WriteLine();
+            computerScore = GenerateComputerScore(cardDealer);
 
             // OUTPUTS
             ShowGameResult(playerScore, computerScore);
@@ -115,5 +113,14 @@ class Program
             //      ask if user wants another card
             ProcessYesNoInput("Press Y to get another card, any other key to end your turn.", ref anotherCard);
         }
+    }
+
+    // method that returns the computer score
+    private static int GenerateComputerScore(Random cardDealer)
+    {
+        int score = cardDealer.Next(15, 22);
+        Console.WriteLine($"Computer Score is {score.ToString()}");
+        Console.WriteLine();
+        return score;
     }
 }
