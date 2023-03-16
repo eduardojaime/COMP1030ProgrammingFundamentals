@@ -48,14 +48,32 @@ class Program
                 }
             }
             //  generate computer score
+            computerScore = cardDealer.Next(15, 22);
+            Console.WriteLine($"Computer Score is {computerScore.ToString()}");
+            Console.WriteLine();
 
             // OUTPUTS
             //  determine winner and show a message
             //  instant win = 21
+            if (playerScore == 21) {
+                Console.WriteLine("Player wins!");
+            }
             //  instant lose > 21
+            else if (playerScore > 21) {
+                Console.WriteLine("Player loses!");
+            }
             //  tie comp = player
+            else if (playerScore == computerScore) {
+                Console.WriteLine("It's a tie!");
+            }
             //  normal win player > comp
+            else if (playerScore > computerScore) {
+                Console.WriteLine("Player wins!");
+            }
             //  normal lose comp > player and everything else I didn't cover
+            else {
+                Console.WriteLine("Player loses!");
+            }
 
             //  ask player if they want to play again
             Console.WriteLine("Good game! Press Y to play again, any other key to exit.");
