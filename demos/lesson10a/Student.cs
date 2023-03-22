@@ -49,7 +49,8 @@ class Student
         }
     }
     // CONSTRUCTORS
-    public Student(long studentId, string firstName, string lastName, string program, DateTime birthDate) {
+    public Student(long studentId, string firstName, string lastName, string program, DateTime birthDate)
+    {
         // recommendation is to only use constructor to set values
         // not recommended to add validation, use setters for that
         this.StudentId = studentId;
@@ -59,5 +60,15 @@ class Student
         this.BirthDate = birthDate; // use the property method not the private field in order to keep validation
     }
     // PUBLIC METHODS
+    // method to return a letter grade based on the average value
+    public string GetLetterGrade()
+    {
+        if (this.Average >= 90) { return "A"; }
+        else if (this.Average >= 80) { return "B"; }
+        else if (this.Average >= 70) { return "C"; }
+        else if (this.Average >= 60) { return "D"; }
+        else { return "F"; }
+    }
     // PRIVATE METHODS
+    // none for this example
 }
