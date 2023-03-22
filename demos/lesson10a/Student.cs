@@ -28,15 +28,15 @@ class Student
         }
     }
 
-    private float _Average;
-    public float Average
+    private float _Average; // this is the actual bucket of data
+    public float Average // this is a method, not an actual bucket of data
     {
         get
         {// read operation
             return this._Average; //just return whatever value is stored
         }
         set
-        { // write operation
+        {   // write operation
             // valid averages go from 0 to 100
             if (value >= 0 && value <= 100)
             {
@@ -49,6 +49,15 @@ class Student
         }
     }
     // CONSTRUCTORS
+    public Student(long studentId, string firstName, string lastName, string program, DateTime birthDate) {
+        // recommendation is to only use constructor to set values
+        // not recommended to add validation, use setters for that
+        this.StudentId = studentId;
+        this.FirstName = firstName;
+        this.LastName = lastName;
+        this.Program = program;
+        this.BirthDate = birthDate; // use the property method not the private field in order to keep validation
+    }
     // PUBLIC METHODS
     // PRIVATE METHODS
 }
