@@ -51,6 +51,22 @@ class Student
         }
     }
     // CONSTRUCTORS
+    // as with every method, it's recommended that parameter names
+    // match field names
+    // this method will force user to pass these parameters
+    // when creating an object
+    public Student(int studentId, string firstName, string lastName,
+                    string program, DateTime birthDate)
+    {
+        // it's a bad practice to add logic here (validation)
+        // just use this for assigning initial values
+        this.StudentId = studentId;
+        this.FirstName = firstName;
+        this.LastName = lastName;
+        this.Program = program;
+        // this._BirthDate = birthDate; // not the right way
+        this.BirthDate = birthDate; // use property so value is validated
+    }
     // PUBLIC METHODS
     // PRIVATE METHODS
 }
