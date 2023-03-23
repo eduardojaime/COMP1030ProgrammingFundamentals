@@ -68,5 +68,14 @@ class Student
         this.BirthDate = birthDate; // use property so value is validated
     }
     // PUBLIC METHODS
+    // returns a letter based on the avg score
+    public string GetLetterGrade()
+    {
+        if (this.Average >= 90) { return "A"; }
+        else if (this.Average >= 80) { return "B"; }
+        else if (this.Average >= 70) { return "C"; }
+        else if (this.Average >= 60) { return "D"; }
+        else { return "F"; }
+    }
     // PRIVATE METHODS
 }
