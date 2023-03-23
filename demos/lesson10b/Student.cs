@@ -29,8 +29,8 @@ class Student
         }
     }
     // valid avg range is 0 to 100
-    private float _Average;
-    public float Average
+    private float _Average; // private field
+    public float Average // public property
     {
         get
         {
