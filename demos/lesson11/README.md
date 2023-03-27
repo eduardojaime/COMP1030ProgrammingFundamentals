@@ -1,0 +1,168 @@
+# Instructions
+
+### Demo1 Inheritance (Shapes)
+
+- Create a new folder called lesson11
+- Inside lesson11, create a new folder called inheritance
+- Open this folder with VS Code
+- Open the terminal and run the following command
+    - dotnet new console --use-program-main
+- Go to Program.cs > main method
+    - Modify the default Console.WriteLine() message to read "Hello, Shapes!"
+- Take a look at the Class Diagram provided under lesson11/diagrams in this repository
+    - Use this as a reference for the next part
+    - Create a new file and name it Shape.cs and then:
+        - Define an abstract class with the same name
+        - Add the following fields
+            - Name as a public string
+        - Add the following methods
+            - PrintShape
+                - No parameters
+                - Returns void
+                - Make virtual and provide default code
+            - CalculateArea
+                - No parameters
+                - Returns double
+                - Make abstract
+            - CalculatePerimeter without parameters and returns void
+                - No parameters
+                - Returns double
+                - Make abstract
+    - Create a new file and name it Rectangle.cs and then:
+        - Define a public class with the same name
+        - Make this class inherit from shape
+        - Add the following fields
+            - Width as a public double
+            - Height as a public double
+        - Add the following methods
+            - PrintShape
+                - No parameters
+                - Returns void
+                - Use keyword override and provide code to print the right shape
+            - CalculateArea
+                - No parameters
+                - Returns void
+                - Use keyword override and provide code to calculate the area
+            - CalculatePerimeter without parameters and returns void
+                - No parameters
+                - Returns void
+                - Use keyword override and provide code to calculate the perimeter
+    - Create a new file and name it Triangle.cs and then:
+        - Define a public class with the same name
+        - Make this class inherit from shape
+        - Add the following fields
+            - SideA as a public double
+            - SideB as a public double
+            - SideC as a public double
+        - Add the following methods
+            - PrintShape
+                - No parameters
+                - Returns void
+                - Use keyword override and provide code to print the right shape
+            - CalculateArea
+                - No parameters
+                - Returns void
+                - Use keyword override and provide code to calculate the area
+            - CalculatePerimeter without parameters and returns void
+                - No parameters
+                - Returns void
+                - Use keyword override and provide code to calculate the perimeter
+
+### Demo3 Testing Inheritance
+
+- Go to Program.cs > main method
+    - Try creating an instance of Shape
+        - Confirm error message
+        - Comment this line out
+    - Declare and initialize an instance of Rectangle
+        - Provide values for Height and Width
+        - Call PrintShape()
+        - Call CalculatePerimeter()
+        - Call CalculateArea()
+    - Declare and initialize an instance of Triangle
+        - Provide values for SideA, SideB and SideC
+        - Call PrintShape()
+        - Call CalculatePerimeter()
+        - Call CalculateArea()
+- Run and verify output
+    - Each PrintShape call must print the corresponding shape
+    - Each calculate call must return and print the corresponding value
+
+### Demo3 Composition (Cars)
+
+- Inside lesson11, create a new folder called composition
+- Open this folder with VS Code
+- Open the terminal and run the following command
+    - dotnet new console --use-program-main
+- Go to Program.cs > main method
+    - Modify the default Console.WriteLine() message to read "Hello, Cars!"
+- Take a look at the Class Diagram provided under lesson11/diagrams in this repository
+    - Use this as a reference for the next part
+    - Create a new file and name it SteeringWheel.cs and then:
+        - Define an abstract class with the same name
+        - Add the following fields
+            - Color as a public string
+        - Add the following methods
+            - TurnLeft()
+                - No parameters
+                - Returns void
+                - Use the console object to print a message that reads "Turning left!"
+            - TurnRight()
+                - No parameters
+                - Returns double
+                - Use the console object to print a message that reads "Turning right!"
+    - Create a new file and name it Engine.cs and then:
+        - Define an abstract class with the same name
+        - Add the following fields
+            - CylinderCount as a public int
+        - Add the following methods
+            - TurnOn
+                - No parameters
+                - Returns void
+                - Use the console object to print a message that reads "Turning on!"
+            - TurnOff
+                - No parameters
+                - Returns double
+                - Use the console object to print a message that reads "Turning off!"
+            - Accelerate without parameters and returns void
+                - No parameters
+                - Returns double
+                - Use the console object to print a message that reads "Moving!"
+    - Create a new file and name it Car.cs and then:
+        - Define an abstract class with the same name
+        - Add the following fields
+            - Make as a public int
+            - Year as a public int
+            - Model as a public int
+            - SteeringWheel as a public SteeringWheel
+            - Engine as a public Engine
+        - Add the following methods
+            - Constructor method
+                - Parameter list: make, year, model, engine, steeringWheel
+                - Returns void
+            - GoDrive
+                - No parameters
+                - Returns double
+                - This method should call methods in the engine and steering wheel
+                    - TurnOn
+                    - Accelerate
+                    - TurnLeft
+                    - Accelerate
+                    - TurnRight
+                    - Accelerate
+                    - TurnRight
+                    - TurnOff
+
+### Demo4 Testing Composition
+
+- Go to Program.cs > main method
+    - Declare and initialize an instance of SteeringWheel
+        - Provide values for Color
+        - A steering wheel doesn't do anything by itself, so we shouldn't call methods directly from this object
+    - Declare and initialize an instance of Engine
+        - Provide values for CylinderCount
+        - An engine doesn't do anything by itself, so we shouldn't call methods directly from this object
+    - Declare and initialize an instance of Car
+        - Use the constructor method to provide the necessary values
+        - Call GoDrive()
+Run and verify output
