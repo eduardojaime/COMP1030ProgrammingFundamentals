@@ -10,7 +10,7 @@ class Program
         Goldfish dory = new Goldfish();
         // Simple inheritance
         dory.MakeSound();
-        
+        // Polymorphism in action
         myCat.MakeSound();
         myDog.MakeSound();
 
