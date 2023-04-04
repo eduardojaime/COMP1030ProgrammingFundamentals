@@ -14,5 +14,9 @@ class Program
         myCat.MakeSound();
         myDog.MakeSound();
 
+        // Polymorphic methods
+        dory.Sleep();
+        myCat.Sleep();
+        myDog.Sleep();
     }
 }

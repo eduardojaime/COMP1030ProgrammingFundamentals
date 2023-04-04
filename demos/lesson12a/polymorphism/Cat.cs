@@ -8,4 +8,10 @@ class Cat : Animal
         // base.MakeSound(); // calling method from parent class
         Console.WriteLine("Cat goes meow meow!");
     }
+    // Mandatory method
+    // Must be overriden here
+    public override void Sleep()
+    {
+        Console.WriteLine("Cat goes brrrrr brrrr");
+    }
 }

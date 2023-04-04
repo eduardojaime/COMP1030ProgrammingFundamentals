@@ -5,4 +5,9 @@ class Dog : Animal
     {
         Console.WriteLine("Dog goes woof woof!");
     }
+    // Polymorphic and Mandatory method
+    public override void Sleep()
+    {
+        Console.WriteLine("Husky goes wimwim!");
+    }
 }

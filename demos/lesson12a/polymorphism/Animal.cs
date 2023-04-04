@@ -1,6 +1,8 @@
 // This class represents animals in my system
 // I want to use this class to specify behaviours for my animals
-class Animal
+// Classes must be declared abstract 
+// to contain abstract methods
+abstract class Animal
 {
     // Make some sound
     // Implementation for this is optional, I want to provide some 'default' sound
@@ -11,5 +13,7 @@ class Animal
     }
 
     // Sleep
-    // TODO
+    // This is a mandatory method
+    // All animals MUST implement Sleep()
+    public abstract void Sleep();
 }
