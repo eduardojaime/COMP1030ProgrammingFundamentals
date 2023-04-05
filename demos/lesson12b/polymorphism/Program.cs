@@ -7,8 +7,10 @@ class Program
         // simple inheritance Animal > Dog and Cat
         Dog myDog = new Dog();
         myDog.MakeSound();
+        myDog.Sleep();
 
         Cat myCat = new Cat();
         myCat.MakeSound();
+        myCat.Sleep();
     }
 }
