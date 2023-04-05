@@ -11,5 +11,13 @@ class Program
         // Interfaces map to requirements
         // Req 1 > all contacts must show their information
         // Req 2 > contacts with email addresses must be able to receive emails from system
+        Person myPerson = new Person();
+        myPerson.FirstName = "Edward";
+        myPerson.LastName ="James";
+        myPerson.PhoneNumber = "(647) 123 4455";
+        myPerson.EmailAddress = "ed@georgian.ca";
+
+        Console.WriteLine(myPerson.ShowContactInfo());
+        // New Req 3 > now we need to handle companies which have different attributes
     }
 }
