@@ -13,11 +13,25 @@ class Program
         // Req 2 > contacts with email addresses must be able to receive emails from system
         Person myPerson = new Person();
         myPerson.FirstName = "Edward";
-        myPerson.LastName ="James";
+        myPerson.LastName = "James";
         myPerson.PhoneNumber = "(647) 123 4455";
         myPerson.EmailAddress = "ed@georgian.ca";
-
         Console.WriteLine(myPerson.ShowContactInfo());
         // New Req 3 > now we need to handle companies which have different attributes
+        Company myCompany = new Company();
+        myCompany.CompanyName = "Programmers Inc";
+        myCompany.DirectorEmailAddress = "ceo@programmers.com";
+        myCompany.DirectorName = "James Edwards";
+        myCompany.PhoneNumber = "(647) 123 4455";
+        Console.WriteLine(myCompany.ShowContactInfo());
+        // calling a method that takes an object that implements the interface as parameter
+        SendExternalEmail(myPerson);
+        SendExternalEmail(myCompany); // both classes implement IEmailable so these are accepted
+    }
+    public static void SendExternalEmail(IEmailable contact) // (Person person, Company company)
+    {
+        // in first approach you'd have todetermine which one is not null and send email with that
+        // simpler approach with interfaces:
+        contact.SendEmail();
     }
 }
