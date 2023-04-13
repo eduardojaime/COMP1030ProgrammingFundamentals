@@ -14,7 +14,9 @@ class Program
                 Console.WriteLine("Please enter an index number to show the value: ");
                 // The following lines can break
                 string? choice = Console.ReadLine(); // depending on user input, setting nullable type (?) makes program expect and handle nulls
-                int index = int.Parse(choice); // can only parse any numeric (int) value represented as string
+                // int index = int.Parse(choice); // can only parse any numeric (int) value represented as string
+                int index = 0;
+                int.TryParse(choice, out index);// this method has a inner try-catch
                 Console.WriteLine($"Index {index.ToString()} value is {myArr[index].ToString()}"); // if index is out of bounds
             }
             catch (FormatException ex)
@@ -35,5 +37,16 @@ class Program
             string exit = Console.ReadLine();
             if (exit == "Y") { keepRunning = false; }
         }
+    
+        decimal amt = 10.0M;
+        // OPTION A
+        List<Product> products = new List<Product>(); // EMPTY LIST
+        Product prodA = new Product();
+        Product prodB = new Product();
+        products.Add(prodA);
+        products.Add(prodB);
+
+        List<Product> prodAlternative = new List<Product>() { prodA, prodB };
+    
     }
 }
